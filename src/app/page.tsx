@@ -20,7 +20,7 @@ const Home: React.FC = () => {
         {/* Hero Section */}
         <header className="bg-gradient-to-r from-blue-500 to-green-600 text-white text-center py-20">
           <h1 className="text-5xl font-bold">Ama Ser el Cambio AC</h1>
-          <p className="text-2xl mt-4">"Manos que dan jamás estarán vacías"</p>
+          <p className="text-2xl mt-4">&quot;Manos que dan jamás estarán vacías&quot;</p>
           <p className="text-lg mt-2">¡Súmate a la nueva generación!</p>
         </header>
 
@@ -28,7 +28,7 @@ const Home: React.FC = () => {
         <section className="py-16 px-6 max-w-5xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6 text-gray-800">¿Quiénes Somos?</h2>
           <p className="text-lg leading-relaxed text-gray-700">
-            "Ama Ser el Cambio" es una asociación civil sin fines de lucro ni afinidad política o religiosa que busca
+          &quot;Ama Ser el Cambio&quot; es una asociación civil sin fines de lucro ni afinidad política o religiosa que busca
             el bienestar común de la sociedad mediante el apoyo a sectores vulnerables para el desarrollo integral de
             las comunidades.
           </p>

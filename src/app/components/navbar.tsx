@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'; // Importamos los iconos de Heroicons
+import Image from 'next/image';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,17 +34,19 @@ const Navbar: React.FC = () => {
         <div className="flex-grow flex justify-center">
           <Link href="/" passHref>
             <div className="flex items-center space-x-2">
-              <img
+              <Image
                 src="/images/favicon.gif"
                 className="h-12"
                 alt="Logo favicon AMA"
                 aria-label="Inicio"
+                loading='lazy'
               />
-              <img
+              <Image
                 src="/images/logotipo.gif"
                 className="h-12"
                 alt="Logotipo AMA"
                 aria-label="Inicio"
+                loading='lazy'
               />
             </div>
           </Link>
