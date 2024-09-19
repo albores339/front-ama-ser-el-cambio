@@ -1,6 +1,7 @@
 // pages/index.tsx
 import React from 'react';
 import Head from 'next/head';
+import CardContainer from './components/cards';
 
 const Home: React.FC = () => {
   return (
@@ -15,7 +16,7 @@ const Home: React.FC = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="bg-gray-50 min-h-screen">
+      <main className="">
         {/* Hero Section */}
         <header className="bg-gradient-to-r from-blue-500 to-green-600 text-white text-center py-20">
           <h1 className="text-5xl font-bold">Ama Ser el Cambio AC</h1>
@@ -34,29 +35,7 @@ const Home: React.FC = () => {
         </section>
 
         {/* Sección de Proyectos y Actividades */}
-        <section className="bg-gray-100 py-16 px-6 max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-10 text-gray-800">Nuestros Proyectos</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Apoyo Alimenticio</h3>
-              <p className="text-gray-700">
-                Reparto de alimentos en las afueras de hospitales, terminales, asilos, orfanatos, etc.
-              </p>
-            </div>
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Apoyo al Deporte</h3>
-              <p className="text-gray-700">
-                Carrera de 5km con premios para los participantes, realizada una vez al año.
-              </p>
-            </div>
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-2xl font-semibold mb-4 text-gray-800">Apoyo Ciudadano</h3>
-              <p className="text-gray-700">
-                Capacitación en educación vial en las afueras de escuelas públicas y avenidas transitadas.
-              </p>
-            </div>
-          </div>
-        </section>
+        <CardContainer/>
 
         {/* Sección de Contacto */}
         <section className="py-16 px-6 max-w-5xl mx-auto text-center">
@@ -66,10 +45,6 @@ const Home: React.FC = () => {
         </section>
 
         {/* Footer */}
-        <footer className="bg-blue-500 text-white text-center py-6">
-          <p>© 2024 Ama Ser el Cambio AC - Todos los derechos reservados</p>
-          <p>Síguenos en: Facebook - Ama Ser el Cambio AC</p>
-        </footer>
       </main>
     </>
   );
