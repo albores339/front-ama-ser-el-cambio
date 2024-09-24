@@ -1,64 +1,67 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link'; // Para enlazar a la nueva página
 
-interface CardProps {
-  title: string;
-  description: string;
-  imageUrl: string;
-  altText: string;
-}
-
-const Card: React.FC<CardProps> = ({ title, description, imageUrl, altText }) => {
-  return (
-    <div className="max-w-sm bg-stone-100 m-4 border border-gray-200 rounded-lg shadow-lg">
-      <a href="#">
-        <Image className="rounded-t-lg object-cover h-48 w-full" src={imageUrl} alt={altText} loading='lazy' />
-      </a>
-      <div className="p-5">
-        <a href="#">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-cyan-600">{title}</h5>
-        </a>
-        <p className="mb-3 font-normal text-gray-700">{description}</p>
-        <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
-          Leer más
-          <svg className="w-3.5 h-3.5 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-  );
-};
-
-const CardContainer: React.FC = () => {
-  const cardsData = [
-    {
-      title: 'Apoyo Alimenticio',
-      description: 'Reparto de alimentos en las afueras de hospitales, terminales, asilos, orfanatos, etc.',
-      imageUrl: '/images/comida.png', // Cambia esta ruta según tu imagen
-      altText: 'Apoyo Alimenticio',
-    },
+const FantasticPhotoCardsSection: React.FC = () => {
+  const cards = [
     {
       title: 'Apoyo al Deporte',
-      description: 'Carrera de 5km con premios para los participantes, realizada una vez al año.',
-      imageUrl: '/images/deporte.png', // Cambia esta ruta según tu imagen
-      altText: 'Apoyo al Deporte',
+      imageUrl: '/images/deporte.jpg',
+      description: 'Carrera de 5km con premios para los participantes.',
+      gradient: 'from-red-500 to-yellow-500',
+    },
+    {
+      title: 'Apoyo Alimenticio',
+      imageUrl: '/images/comida.png',
+      description: 'Reparto de alimentos en hospitales y asilos.',
+      gradient: 'from-cyan-500 to-blue-500',
     },
     {
       title: 'Apoyo Ciudadano',
-      description: 'Capacitación en educación vial en las afueras de escuelas públicas y avenidas transitadas.',
-      imageUrl: '/images/ciudadano.png', // Cambia esta ruta según tu imagen
-      altText: 'Apoyo Ciudadano',
+      imageUrl: '/images/ciudadano.png',
+      description: 'Capacitación en educación vial y apoyo ciudadano.',
+      gradient: 'from-lime-500 to-green-500',
     },
   ];
 
   return (
-    <div className="grid gap-8 lg:grid-cols-3 sm:grid-cols-1">
-      {cardsData.map((card, index) => (
-        <Card key={index} {...card} />
-      ))}
-    </div>
+    <section className="py-16 text-stone-700">
+      <div className="text-center mb-12">
+        <h2 className="text-4xl font-bold mb-4">Nuestras Iniciativas</h2>
+        <p className="text-lg">Descubre las acciones que estamos tomando para cambiar el mundo</p>
+      </div>
+
+      <div className="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-8 items-center">
+        {cards.map((card, index) => (
+          <div key={index} className="relative flex flex-col items-center">
+            <div className={`relative bg-gradient-to-tr ${card.gradient} p-1 rounded-full shadow-2xl hover:shadow-xl transform hover:scale-105 transition-transform duration-300`}>
+              <div className="relative w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden aspect-square">
+                <Image
+                  src={card.imageUrl}
+                  alt={card.title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-full"
+                />
+              </div>
+            </div>
+            <div className="text-center mt-4">
+              <h3 className={`text-2xl font-bold text-${card.gradient.split(' ')[0]}`}>{card.title}</h3>
+              <p className="text-gray-600">{card.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Botón "Ver Más" */}
+      <div className="text-center mt-12">
+        <Link href="/iniciativas"
+        className="inline-block bg-lime-500 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-lime-600">
+            Ver Más Iniciativas
+        </Link>
+      </div>
+    </section>
   );
 };
 
-export default CardContainer;
+export default FantasticPhotoCardsSection;
