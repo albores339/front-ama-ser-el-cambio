@@ -2,7 +2,6 @@ import React from 'react';
 import Head from 'next/head';
 import CardContainer from './components/cards';
 import Contactanos from './components/contactanos';
-import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import Image from 'next/image';
 
 const Home: React.FC = () => {
@@ -37,7 +36,7 @@ const Home: React.FC = () => {
               Ama Ser el Cambio A. C.
             </h1>
             <p className="text-3xl mt-4 mb-8 text-lime-200 drop-shadow-lg">
-              &quot;Manos que dan jamás estarán vacías&quot;
+            {`"Manos que dan jamás estarán vacías".`}
             </p>
             <p className="text-xl mb-12 text-white drop-shadow-lg">
               ¡Súmate a la nueva generación!
@@ -56,9 +55,9 @@ const Home: React.FC = () => {
         <section className="py-16 px-6 max-w-5xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6 text-gray-800">¿Quiénes Somos?</h2>
           <p className="text-lg leading-relaxed text-gray-700">
-            "Ama Ser el Cambio" es una asociación civil sin fines de lucro ni afinidad política o religiosa que busca
+          {`"Ama Ser el Cambio" es una asociación civil sin fines de lucro ni afinidad política o religiosa que busca
             el bienestar común de la sociedad mediante el apoyo a sectores vulnerables para el desarrollo integral de
-            las comunidades.
+            las comunidades.`}
           </p>
         </section>
 

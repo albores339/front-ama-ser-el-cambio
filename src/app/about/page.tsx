@@ -15,7 +15,7 @@ const QuienesSomos: React.FC = () => {
         <h1 className="text-5xl font-bold text-center text-gray-800 mb-10">¿Quiénes Somos?</h1>
         <section className="text-lg leading-relaxed text-gray-700 mb-12">
           <p className="mb-6">
-            "Ama Ser el Cambio" es una asociación civil sin fines de lucro ni afinidad política ni religiosa, que busca el bienestar común de la sociedad mediante el apoyo a sectores vulnerables para el desarrollo integral de las comunidades.
+            {`"Ama Ser el Cambio" es una asociación civil sin fines de lucro ni afinidad política ni religiosa, que busca el bienestar común de la sociedad mediante el apoyo a sectores vulnerables para el desarrollo integral de las comunidades.`}
           </p>
 
           <h2 className="text-3xl font-bold mb-4 text-cyan-600">Objeto Social</h2>
