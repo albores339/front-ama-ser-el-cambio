@@ -44,7 +44,7 @@ const Donaciones: React.FC = () => {
           {/* Información Legal */}
           <div className="my-12 max-w-3xl mx-auto bg-gray-100 p-6 rounded-lg shadow-md">
             <h2 className="text-3xl font-bold mb-4">Información Legal</h2>
-            <div className="flex justify-between items-center space-x-6 text-lg">
+            <div className="flex flex-col md:flex-row justify-between items-center space-x-6 text-lg">
               <div className="flex items-center">
                 <FaKey className="mr-2 text-gray-500" />
                 <span>CLUNI: ASC160520074BD</span>

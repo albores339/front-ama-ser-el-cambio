@@ -22,13 +22,13 @@ const Footer: React.FC = () => {
               <a href="/about" className="mr-4 hover:underline md:mr-6">Acerca de</a>
             </li>
             <li>
-              <a href="/projects" className="mr-4 hover:underline md:mr-6">Proyectos</a>
+              <a href="/iniciativas" className="mr-4 hover:underline md:mr-6">Proyectos</a>
             </li>
             <li>
-              <a href="/donations" className="mr-4 hover:underline md:mr-6">Donaciones</a>
+              <a href="/donar" className="mr-4 hover:underline md:mr-6">Donaciones</a>
             </li>
             <li>
-              <a href="/contact" className="hover:underline">Contacto</a>
+              <a href="/contacto" className="hover:underline">Contacto</a>
             </li>
           </ul>
         </div>
