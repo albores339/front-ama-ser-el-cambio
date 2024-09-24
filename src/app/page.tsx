@@ -62,7 +62,7 @@ const Home: React.FC = () => {
         </section>
 
         {/* Sección de Registro de Afiliados */}
-        <section className="py-12 px-6 bg-gradient-to-r from-violet-50 to-violet-100 rounded-xl shadow-2xl">
+        <section className="py-12 px-6 bg-violet-50 rounded-xl shadow-2xl">
           <div className="flex flex-col lg:flex-row items-center justify-center lg:space-x-12">
             {/* Sección de Texto */}
             <div className="text-center lg:text-left lg:w-3/5 pl-8">
