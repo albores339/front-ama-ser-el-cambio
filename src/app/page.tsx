@@ -34,7 +34,7 @@ const Home: React.FC = () => {
           {/* Contenido del Hero */}
           <div className="relative z-0 text-center px-6">
             <h1 className="text-6xl font-extrabold text-white drop-shadow-lg">
-              Ama Ser el Cambio A. C.
+              Ama Ser el Cambio A.C.
             </h1>
             <p className="text-3xl mt-4 mb-8 text-lime-200 drop-shadow-lg">
             {`"Manos que dan jamás estarán vacías".`}

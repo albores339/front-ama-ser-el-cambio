@@ -23,7 +23,7 @@ const Donaciones: React.FC = () => {
             className="rounded-lg shadow-2xl"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center">
-            <h1 className="text-5xl font-bold text-white drop-shadow-md mb-4">Haz una Donación</h1>
+            <h1 className="text-5xl font-bold text-white drop-shadow-md m-4">Haz una Donación</h1>
             <p className="text-xl text-white mb-6 max-w-xl text-center">
               Tu donación puede marcar una diferencia en la vida de muchas personas. ¡Únete a nuestra misión y apoya el cambio!
             </p>
@@ -36,7 +36,7 @@ const Donaciones: React.FC = () => {
           </div>
         </div>
 
-        <section id="detalles" className="text-lg leading-relaxed text-gray-700 my-24 text-center">
+        <section id="detalles" className="text-lg leading-relaxed text-gray-700 my-16 text-center">
           <p className="mb-6">
             Cada donación es una oportunidad para mejorar la vida de personas en situaciones vulnerables. Tu aporte nos permite continuar con nuestros proyectos de apoyo en diversos sectores. ¡Únete a nuestra misión!
           </p>
