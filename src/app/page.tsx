@@ -3,6 +3,7 @@ import Head from 'next/head';
 import CardContainer from './components/cards';
 import Contactanos from './components/contactanos';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Home: React.FC = () => {
   return (
@@ -42,12 +43,12 @@ const Home: React.FC = () => {
               ¡Súmate a la nueva generación!
             </p>
 
-            <a
-              href="#donate"
+            <Link
+              href="/donar"
               className="inline-block mt-6 bg-white text-cyan-600 font-bold py-4 px-10 rounded-full shadow-2xl transition-transform transform hover:scale-110 duration-300 ease-in-out hover:bg-lime-500 hover:text-white"
             >
               Donar Ahora
-            </a>
+            </Link>
           </div>
         </header>
 

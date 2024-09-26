@@ -1,18 +1,41 @@
-import React from 'react';
+"use client"; // Marca la página como un Client Component
+
+import { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import { FaUniversity, FaPaypal, FaKey, FaFileAlt } from 'react-icons/fa';
+import { FaUniversity, FaKey, FaFileAlt } from 'react-icons/fa';
+import PaypalButton from '../components/PaypalButton'; // Importa tu componente de PayPal
+import Swal from 'sweetalert2';
 
 const Donaciones: React.FC = () => {
+  const [amount, setAmount] = useState('10.00');  // Monto de la donación
+
+  // Función que maneja el éxito de la transacción
+  const handleSuccess = (details: any) => {
+    Swal.fire({
+      title: `¡Gracias por tu donación, ${details.payer.name.given_name}!`,
+      text: 'Tu donación ha sido exitosa. ¡Muchas gracias por tu apoyo!',
+      icon: 'success',
+      confirmButtonText: 'Aceptar',
+      confirmButtonColor: '#0891b2',
+      background: '#fff',
+      backdrop: `
+        rgba(0, 123, 255, 0.4)
+        url("/images/celebrate.gif") // Puedes agregar un gif o imagen de fondo si deseas
+        center no-repeat
+      `
+    });
+  };
+
   return (
     <>
       <Head>
         <title>Donaciones | Ama Ser el Cambio AC</title>
         <meta name="description" content="Haz una donación para apoyar a Ama Ser el Cambio AC y sus proyectos en beneficio de los sectores más vulnerables de la sociedad." />
       </Head>
-      <main className="py-16 px-6 max-w-5xl mx-auto">
+      <main className="max-w-5xl mx-auto">
         {/* Sección de imagen inspiradora */}
-        <div className="relative w-full h-96 mb-12">
+        <div className="relative w-full h-96 mb-6">
           <Image
             src="/images/donacion.webp" // Ruta a la imagen generada
             alt="Inspiración para donar"
@@ -34,7 +57,7 @@ const Donaciones: React.FC = () => {
           </div>
         </div>
 
-        <section id="detalles" className="text-lg leading-relaxed text-gray-700 mb-12 text-center">
+        <section id="detalles" className="text-lg leading-relaxed text-gray-700 my-24 text-center">
           <p className="mb-6">
             Cada donación es una oportunidad para mejorar la vida de personas en situaciones vulnerables. Tu aporte nos permite continuar con nuestros proyectos de apoyo en diversos sectores. ¡Únete a nuestra misión!
           </p>
@@ -78,16 +101,21 @@ const Donaciones: React.FC = () => {
           <div className="bg-white shadow-lg rounded-lg p-8 mb-10">
             <h3 className="text-3xl font-bold text-gray-800 mb-4">Donar con PayPal</h3>
             <p className="text-lg mb-6">
-              También puedes hacer tu donación a través de PayPal de forma fácil y segura.
+              Selecciona el monto que deseas donar y realiza tu donación a través de PayPal de forma fácil y segura.
             </p>
-            <a
-              href="https://www.paypal.com/donate"
-              className="inline-flex items-center bg-blue-500 text-white text-lg font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition"
-              aria-label="Donar con PayPal"
-            >
-              <FaPaypal className="mr-3" />
-              Donar con PayPal
-            </a>
+            
+            {/* Input de monto y botón de PayPal */}
+            <div className="px-6 max-w-lg mx-auto">
+              <label className="text-lg font-bold mb-2">Ingresa el monto de tu donación:</label>
+              <input 
+                type="text" 
+                value={amount} 
+                onChange={(e) => setAmount(e.target.value)} 
+                placeholder="Ej. 50.00"
+                className="border border-cyan-600 rounded-lg p-2 mb-4 text-lg w-full max-w-md text-center"
+              />
+              <PaypalButton amount={amount} onSuccess={handleSuccess} />
+            </div>
           </div>
         </section>
       </main>
