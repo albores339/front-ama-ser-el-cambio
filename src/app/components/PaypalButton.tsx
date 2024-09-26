@@ -21,7 +21,9 @@ const PaypalSimpleButton = () => {
         <div className="mt-4">
           <Image
             alt="Métodos de pago aceptados"
-            src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/cc-badges-ppmcvdam.png"
+            src="/images/badges.png"
+            width={316}
+            height={40}
             className="mx-auto"
           />
         </div>
