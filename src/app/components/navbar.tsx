@@ -60,7 +60,7 @@ const Navbar: React.FC = () => {
         </button>
 
         {/* Logo centrado */}
-        <div className="flex-grow flex justify-center">
+        <div className="flex-grow flex px-4">
           <Link href="/" passHref>
             <div className="flex items-center space-x-2">
               <Image
@@ -76,7 +76,7 @@ const Navbar: React.FC = () => {
                 alt="Logotipo AMA"
                 width={150}
                 height={50}
-                className="h-12 w-auto"
+                className="h-12 w-auto hidden md:block"
                 loading="lazy"
               />
             </div>
@@ -84,8 +84,8 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Botón "Donar" en pantallas grandes */}
-        <div className="hidden md:flex space-x-4">
-          <Link href="/donar" className="bg-cyan-600 text-white px-5 py-2 rounded-2xl hover:bg-lime-600 transition-all duration-300">
+        <div className="space-x-4">
+          <Link href="/donar" className="bg-lime-600 text-white px-5 py-2 rounded-2xl hover:bg-lime-600 transition-all duration-300">
             Donar
           </Link>
         </div>

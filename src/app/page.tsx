@@ -45,7 +45,7 @@ const Home: React.FC = () => {
 
             <Link
               href="/donar"
-              className="inline-block mt-6 bg-white text-cyan-600 font-bold py-4 px-10 rounded-full shadow-2xl transition-transform transform hover:scale-110 duration-300 ease-in-out hover:bg-lime-500 hover:text-white"
+              className="animate-shake inline-block mt-6 bg-white text-cyan-600 font-bold py-4 px-10 rounded-full shadow-2xl transition-transform transform hover:scale-110 duration-300 ease-in-out hover:bg-lime-500 hover:text-white"
             >
               Donar Ahora
             </Link>
@@ -71,13 +71,13 @@ const Home: React.FC = () => {
               <p className="text-lg leading-relaxed text-stone-700 mb-8">
                 Únete a nuestra comunidad y forma parte de quienes están haciendo el cambio. Regístrate ahora y empieza a colaborar con nosotros.
               </p>
-              <a
+              <Link
                 href="/registrarse"
                 className="inline-block bg-cyan-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-lime-600"
                 aria-label="Regístrate como Afiliado"
               >
                 Regístrate
-              </a>
+              </Link>
             </div>
 
             {/* Imagen del jaguar */}
@@ -103,12 +103,13 @@ const Home: React.FC = () => {
             <p className="text-lg mb-6">
               Tu aporte puede cambiar la vida de muchas personas. Cada donación nos ayuda a continuar con nuestros proyectos de apoyo a los sectores más vulnerables de la sociedad. ¡Únete a nuestra misión!
             </p>
-            <a
+            <Link
               href="/donar"
-              className="bg-white text-pink-500 font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out hover:bg-purple-500 hover:text-white"
+              className=""
             >
-              💖 Donar Ahora
-            </a>
+              <button className='animate-shake bg-white text-pink-500 font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out hover:bg-purple-500 hover:text-white'>💖 Donar Ahora</button>
+              
+            </Link>
           </div>
         </section>
 
