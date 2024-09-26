@@ -2,9 +2,35 @@
 
 import { useEffect, useState } from 'react';
 
+// Declara el tipo manualmente para `window.paypal`
+declare global {
+  interface Window {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    paypal: any;  // Usamos `any` aquí porque no hay un paquete de tipos oficial
+  }
+}
+
+// Define los tipos para las props del componente
 type PaypalButtonProps = {
   amount: string;
-  onSuccess: (details: any) => void;
+  onSuccess: (details: PaypalDetails) => void;
+};
+
+// Define el tipo para los detalles del pago de PayPal
+type PaypalDetails = {
+  payer: {
+    name: {
+      given_name: string;
+    };
+  };
+};
+
+// Define el tipo para las acciones del botón de PayPal
+type PaypalActions = {
+  order: {
+    create: (options: { purchase_units: { amount: { value: string; currency_code: string } }[] }) => Promise<string>;
+    capture: () => Promise<PaypalDetails>;
+  };
 };
 
 const PaypalButton: React.FC<PaypalButtonProps> = ({ amount, onSuccess }) => {
@@ -13,11 +39,11 @@ const PaypalButton: React.FC<PaypalButtonProps> = ({ amount, onSuccess }) => {
   // Cargar el SDK de PayPal
   useEffect(() => {
     const scriptId = 'paypal-sdk';
-    const paypalClientId = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID;  // Usamos la variable de entorno
+    const paypalClientId = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID;
 
     const loadPaypalScript = () => {
       const paypalScript = document.createElement('script');
-      paypalScript.src = `https://www.paypal.com/sdk/js?client-id=${paypalClientId}`;  // Usamos la variable de entorno aquí
+      paypalScript.src = `https://www.paypal.com/sdk/js?client-id=${paypalClientId}`;
       paypalScript.id = scriptId;
       paypalScript.async = true;
       document.body.appendChild(paypalScript);
@@ -41,26 +67,27 @@ const PaypalButton: React.FC<PaypalButtonProps> = ({ amount, onSuccess }) => {
       paypalContainer.innerHTML = "";  // Limpiar el contenido antes de renderizar de nuevo
     }
 
-    if (sdkReady && (window as any).paypal) {
-      (window as any).paypal.Buttons({
+    if (sdkReady && window.paypal) {
+      window.paypal.Buttons({
         style: {
           layout: 'vertical',  // Configuración de estilo (puedes cambiarlo a 'horizontal')
           color: 'blue',       // Cambia el color si lo deseas
           shape: 'rect',       // Forma del botón (rectangular)
           label: 'donate'      // Etiqueta del botón (puedes poner 'checkout', 'pay', etc.)
         },
-        createOrder: function (data: any, actions: any) {
+        createOrder: function (data: unknown, actions: PaypalActions) {
           return actions.order.create({
             purchase_units: [{
               amount: {
-                value: amount,  // Aquí defines el monto
+                value: amount,
+                currency_code: 'MXN',
               },
             }],
           });
         },
-        onApprove: function (data: any, actions: any) {
-          return actions.order.capture().then((details: any) => {
-            onSuccess(details);  // Llama la función onSuccess cuando el pago sea aprobado
+        onApprove: function (data: unknown, actions: PaypalActions) {
+          return actions.order.capture().then((details: PaypalDetails) => {
+            onSuccess(details);
           });
         },
       }).render('#paypal-button-container');  // Renderiza el botón en el contenedor

@@ -11,7 +11,7 @@ const Donaciones: React.FC = () => {
   const [amount, setAmount] = useState('10.00');  // Monto de la donación
 
   // Función que maneja el éxito de la transacción
-  const handleSuccess = (details: any) => {
+  const handleSuccess = (details: { payer: { name: { given_name: string } } }) => {
     Swal.fire({
       title: `¡Gracias por tu donación, ${details.payer.name.given_name}!`,
       text: 'Tu donación ha sido exitosa. ¡Muchas gracias por tu apoyo!',
@@ -99,7 +99,7 @@ const Donaciones: React.FC = () => {
 
           {/* Sección de Donar con PayPal */}
           <div className="bg-white shadow-lg rounded-lg p-8 mb-10">
-            <h3 className="text-3xl font-bold text-gray-800 mb-4">Donar con PayPal</h3>
+            <h3 className="text-3xl font-bold text-gray-800 mb-4">Donar con Tarjeta de Débito o Crédito</h3>
             <p className="text-lg mb-6">
               Selecciona el monto que deseas donar y realiza tu donación a través de PayPal de forma fácil y segura.
             </p>
