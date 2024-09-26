@@ -1,32 +1,11 @@
 "use client"; // Marca la página como un Client Component
 
-import { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { FaUniversity, FaKey, FaFileAlt } from 'react-icons/fa';
 import PaypalButton from '../components/PaypalButton'; // Importa tu componente de PayPal
-import Swal from 'sweetalert2';
 
 const Donaciones: React.FC = () => {
-  const [amount, setAmount] = useState('10.00');  // Monto de la donación
-
-  // Función que maneja el éxito de la transacción
-  const handleSuccess = (details: { payer: { name: { given_name: string } } }) => {
-    Swal.fire({
-      title: `¡Gracias por tu donación, ${details.payer.name.given_name}!`,
-      text: 'Tu donación ha sido exitosa. ¡Muchas gracias por tu apoyo!',
-      icon: 'success',
-      confirmButtonText: 'Aceptar',
-      confirmButtonColor: '#0891b2',
-      background: '#fff',
-      backdrop: `
-        rgba(0, 123, 255, 0.4)
-        url("/images/celebrate.gif") // Puedes agregar un gif o imagen de fondo si deseas
-        center no-repeat
-      `
-    });
-  };
-
   return (
     <>
       <Head>
@@ -99,23 +78,12 @@ const Donaciones: React.FC = () => {
 
           {/* Sección de Donar con PayPal */}
           <div className="bg-white shadow-lg rounded-lg p-8 mb-10">
-            <h3 className="text-3xl font-bold text-gray-800 mb-4">Donar con Tarjeta de Débito o Crédito</h3>
+            <h3 className="text-3xl font-bold text-gray-800 mb-4">Donar con Paypal</h3>
             <p className="text-lg mb-6">
-              Selecciona el monto que deseas donar y realiza tu donación a través de PayPal de forma fácil y segura.
+              Selecciona el monto que deseas donar y realiza tu donación aunque no tengas cuenta a través de PayPal de forma fácil y segura.
             </p>
-            
-            {/* Input de monto y botón de PayPal */}
-            <div className="px-6 max-w-lg mx-auto">
-              <label className="text-lg font-bold mb-2">Ingresa el monto de tu donación:</label>
-              <input 
-                type="text" 
-                value={amount} 
-                onChange={(e) => setAmount(e.target.value)} 
-                placeholder="Ej. 50.00"
-                className="border border-cyan-600 rounded-lg p-2 mb-4 text-lg w-full max-w-md text-center"
-              />
-              <PaypalButton amount={amount} onSuccess={handleSuccess} />
-            </div>
+          <PaypalButton  />
+
           </div>
         </section>
       </main>
