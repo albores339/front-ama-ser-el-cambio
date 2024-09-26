@@ -43,7 +43,7 @@ const PaypalButton: React.FC<PaypalButtonProps> = ({ amount, onSuccess }) => {
 
     const loadPaypalScript = () => {
       const paypalScript = document.createElement('script');
-      paypalScript.src = `https://www.paypal.com/sdk/js?client-id=${paypalClientId}`;
+      paypalScript.src = `https://www.paypal.com/sdk/js?client-id=${paypalClientId}&currency=MXN`;
       paypalScript.id = scriptId;
       paypalScript.async = true;
       document.body.appendChild(paypalScript);
@@ -104,7 +104,7 @@ const PaypalButton: React.FC<PaypalButtonProps> = ({ amount, onSuccess }) => {
 
   }, [sdkReady, amount, onSuccess]);
 
-  return <div id="paypal-button-container" />;  // Este es el contenedor donde se verá el botón
+  return <div id="paypal-button-container" className='' />;  // Este es el contenedor donde se verá el botón
 };
 
 export default PaypalButton;

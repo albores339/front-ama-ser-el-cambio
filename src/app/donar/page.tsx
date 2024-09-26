@@ -106,16 +106,29 @@ const Donaciones: React.FC = () => {
             
             {/* Input de monto y botón de PayPal */}
             <div className="px-6 max-w-lg mx-auto">
-              <label className="text-lg font-bold mb-2">Ingresa el monto de tu donación:</label>
-              <input 
-                type="text" 
-                value={amount} 
-                onChange={(e) => setAmount(e.target.value)} 
-                placeholder="Ej. 50.00"
-                className="border border-cyan-600 rounded-lg p-2 mb-4 text-lg w-full max-w-md text-center"
-              />
-              <PaypalButton amount={amount} onSuccess={handleSuccess} />
-            </div>
+  <label className="text-lg font-bold mb-2">Ingresa el monto de tu donación:</label>
+  <div className="relative">
+    <input 
+      type="text" 
+      value={amount} 
+      onChange={(e) => setAmount(e.target.value)} 
+      placeholder="Ej. 50.00"
+      className={`border border-cyan-600 rounded-lg p-2 mb-4 text-lg w-full max-w-md text-center ${amount && Number(amount) > 0 ? '' : 'animate-shake'}`} // Aplicar animación condicionalmente
+    />
+    <span className="absolute right-8 top-1/2 transform -translate-y-1/2 text-gray-500">MXN</span>
+  </div>
+  <PaypalButton amount={amount} onSuccess={handleSuccess} />
+
+  {/* Imagen de las tarjetas aceptadas */}
+  <div className="mt-4">
+    <img 
+      alt="Métodos de pago aceptados" 
+      src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/cc-badges-ppmcvdam.png"
+      className="mx-auto"
+    />
+  </div>
+</div>
+
           </div>
         </section>
       </main>
