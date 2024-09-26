@@ -32,7 +32,7 @@ const Home: React.FC = () => {
           />
 
           {/* Contenido del Hero */}
-          <div className="relative z-10 text-center px-6">
+          <div className="relative z-0 text-center px-6">
             <h1 className="text-6xl font-extrabold text-white drop-shadow-lg">
               Ama Ser el Cambio A. C.
             </h1>
