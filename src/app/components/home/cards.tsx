@@ -56,7 +56,7 @@ const FantasticPhotoCardsSection: React.FC = () => {
       {/* Botón "Ver Más" */}
       <div className="text-center mt-12">
         <Link href="/iniciativas"
-        className="inline-block bg-lime-500 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-lime-600">
+        className="inline-block bg-lime-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-lime-600">
             Ver Más Iniciativas
         </Link>
       </div>

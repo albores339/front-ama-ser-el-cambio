@@ -18,7 +18,7 @@ const DonationHero: React.FC = () => (
         Tu donación puede marcar una diferencia en la vida de muchas personas. ¡Únete a nuestra misión y apoya el cambio!
       </p>
       <Link href="#detalles">
-        <button className="inline-block bg-lime-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-lime-600 transition-all">
+        <button className="inline-block bg-lime-700 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-lime-600 transition-all">
           Descubre Cómo Donar
         </button>
       </Link>
