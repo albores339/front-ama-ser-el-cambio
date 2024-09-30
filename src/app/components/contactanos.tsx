@@ -43,7 +43,7 @@ const Contactanos: React.FC = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-cyan-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-cyan-700 transition duration-300"
+                className="w-full bg-cyan-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-cyan-700 transition duration-300"
               >
                 Enviar Mensaje
               </button>
@@ -51,7 +51,7 @@ const Contactanos: React.FC = () => {
           </div>
 
           {/* Información de contacto */}
-          <div className="md:w-1/3 bg-cyan-600 text-white p-8 rounded-lg shadow-lg">
+          <div className="md:w-1/3 bg-cyan-700 text-white p-8 rounded-lg shadow-lg">
             <h3 className="text-2xl font-bold mb-6">Información de contacto</h3>
             <div className="flex items-center mb-4">
               <FaPhoneAlt className="h-6 w-6 mr-4" />

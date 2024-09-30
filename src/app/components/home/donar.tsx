@@ -9,7 +9,7 @@ const DonateSection: React.FC = () => (
         Tu aporte puede cambiar la vida de muchas personas. Cada donación nos ayuda a continuar con nuestros proyectos de apoyo a los sectores más vulnerables de la sociedad. ¡Únete a nuestra misión!
       </p>
       <Link href="/donar">
-        <button className="animate-shake bg-white text-pink-500 font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out hover:bg-purple-500 hover:text-white">💖 Donar Ahora</button>
+        <button className="animate-shake bg-white text-pink-700 font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out hover:bg-purple-500 hover:text-white">💖 Donar Ahora</button>
       </Link>
     </div>
   </section>
