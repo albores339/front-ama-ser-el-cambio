@@ -6,7 +6,7 @@ const AfiliadoSection: React.FC = () => (
   <section className="py-12 px-6 bg-violet-50 rounded-xl shadow-2xl">
     <div className="flex flex-col lg:flex-row items-center justify-center lg:space-x-12">
       <div className="text-center lg:text-left lg:w-3/5 pl-8">
-        <h2 className="text-4xl font-bold mb-6 text-lime-800">Regístrate como Afiliado</h2>
+        <h2 className="text-4xl font-bold mb-6 text-lime-700">Regístrate como Afiliado</h2>
         <p className="text-lg leading-relaxed text-stone-700 mb-8">
           Únete a nuestra comunidad y forma parte de quienes están haciendo el cambio. Regístrate ahora y empieza a colaborar con nosotros.
         </p>

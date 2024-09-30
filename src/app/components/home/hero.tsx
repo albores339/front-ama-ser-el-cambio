@@ -21,7 +21,7 @@ const HeroSection: React.FC = () => (
       <p className="text-3xl mt-4 mb-8 text-lime-200 drop-shadow-lg">{`"Manos que dan jamás estarán vacías".`}</p>
       <p className="text-xl mb-12 text-white drop-shadow-lg">¡Súmate a la nueva generación!</p>
       <Link href="/donar">
-        <button className="animate-shake inline-block mt-6 bg-white text-cyan-900 font-bold py-4 px-10 rounded-full shadow-2xl transition-transform transform hover:scale-110 duration-300 ease-in-out hover:bg-lime-700">
+        <button className="animate-shake inline-block mt-6 bg-white text-cyan-900 font-bold py-4 px-10 rounded-full shadow-2xl transition-transform transform hover:scale-110 duration-300 ease-in-out hover:bg-lime-700 hover:text-white">
           Donar Ahora
         </button>
       </Link>
