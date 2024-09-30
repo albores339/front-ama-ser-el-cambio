@@ -85,7 +85,7 @@ const Navbar: React.FC = () => {
 
         {/* Botón "Donar" en pantallas grandes */}
         <div className="space-x-4">
-          <Link href="/donar" className="bg-lime-600 text-white px-5 py-2 rounded-2xl hover:bg-lime-600 transition-all duration-300">
+          <Link href="/donar" className="bg-lime-700 text-white px-5 py-2 rounded-2xl hover:bg-lime-600 transition-all duration-300">
             Donar
           </Link>
         </div>

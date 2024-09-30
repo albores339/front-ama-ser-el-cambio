@@ -1,22 +1,9 @@
 // src/app/layout.tsx (sin "use client")
 
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "./components/footer";
 import WhatsappButton from "./components/boton-chat";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 export const metadata: Metadata = {
   title: "Ama Ser el Cambio",
@@ -31,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`antialiased`}
         style={{ backgroundColor: "white" }}
       >
         <div className="mt-20 max-w-screen-lg mx-auto bg-white">
