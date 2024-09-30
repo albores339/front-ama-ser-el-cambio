@@ -27,14 +27,16 @@ const Login: React.FC = () => {
 
       <main className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8">
-          <Link href="/">
+          <Link href={"/"}>
             <Image
               src="/images/Logo-AMA (1).gif"
               alt="Logo de Ama Ser el Cambio AC"
-              className="mx-auto"
               width={300}
               height={300}
-              priority
+              priority // Marca la imagen como prioritaria
+              decoding="async"
+              className="mx-auto my-8"
+              sizes="(max-width: 768px) 100vw, 300px" // Optimiza el tamaño según la pantalla
             />
           </Link>
           <h2 className="text-center text-3xl font-extrabold text-gray-900 mt-4">
@@ -42,7 +44,7 @@ const Login: React.FC = () => {
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
             ¿Aún no tienes una cuenta?{' '}
-            <Link href="/registrarse" className="font-medium text-cyan-600 hover:text-cyan-500">
+            <Link href="/registrarse" className="font-medium text-cyan-800 hover:text-cyan-700">
               Regístrate
             </Link>
           </p>
@@ -94,7 +96,7 @@ const Login: React.FC = () => {
             <div>
               <button
                 type="submit"
-                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
+                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-cyan-700 hover:bg-cyan-800 my-8 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
               >
                 Iniciar sesión
               </button>

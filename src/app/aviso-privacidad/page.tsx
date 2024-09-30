@@ -13,10 +13,10 @@ const AvisoPrivacidad: React.FC = () => {
       </Head>
 
       <main className="max-w-4xl mx-auto py-16 px-4">
-        <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
+        <h1 className="text-4xl font-bold text-center text-stone-800 mb-8">
           Aviso de Privacidad
         </h1>
-        <section className="text-gray-700 leading-relaxed text-lg">
+        <section className="text-stone-700 leading-relaxed text-lg">
           <p className="mb-4">
             <strong>Ama Ser el Cambio AC</strong>, en cumplimiento con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares y su Reglamento, informa lo siguiente:
           </p>
@@ -49,12 +49,12 @@ const AvisoPrivacidad: React.FC = () => {
 
           <h2 className="text-2xl font-semibold mb-4">5. Medios para Ejercer los Derechos ARCO</h2>
           <p className="mb-4">
-            Puede acceder, rectificar, cancelar u oponerse al tratamiento de sus datos personales contactando a <strong>Ama Ser el Cambio AC</strong> a través del correo electrónico <a href="mailto:amaserelcambio@gmail.com" className="text-cyan-600 hover:underline">amaserelcambio@gmail.com</a>.
+            Puede acceder, rectificar, cancelar u oponerse al tratamiento de sus datos personales contactando a <strong>Ama Ser el Cambio AC</strong> a través del correo electrónico <a href="mailto:amaserelcambio@gmail.com" className="text-cyan-800 hover:underline">amaserelcambio@gmail.com</a>.
           </p>
 
           <h2 className="text-2xl font-semibold mb-4">6. Cambios al Aviso de Privacidad</h2>
           <p className="mb-4">
-            Nos reservamos el derecho de modificar este aviso de privacidad para adaptarlo a cambios legislativos o políticas internas. Las actualizaciones estarán disponibles en nuestra página web <a href="https://front-ama-ser-el-cambio.vercel.app/" className="text-cyan-600 hover:underline">https://front-ama-ser-el-cambio.vercel.app/</a>.
+            Nos reservamos el derecho de modificar este aviso de privacidad para adaptarlo a cambios legislativos o políticas internas. Las actualizaciones estarán disponibles en nuestra página web <a href="https://front-ama-ser-el-cambio.vercel.app/" className="text-cyan-800 hover:underline">https://front-ama-ser-el-cambio.vercel.app/</a>.
           </p>
 
           <h2 className="text-2xl font-semibold mb-4">7. Consentimiento</h2>

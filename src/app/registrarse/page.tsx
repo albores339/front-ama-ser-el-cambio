@@ -20,18 +20,20 @@ const Registrarse: React.FC = () => {
           <Link href="/" className="flex flex-col items-center">
             <Image
               src="/images/Logo-AMA (1).gif"
-              alt="Ama Ser el Cambio AC Logo"
+              alt="Logo de Ama Ser el Cambio AC"
               width={300}
               height={300}
-              className="mx-auto mb-4"
-              priority
+              priority // Marca la imagen como prioritaria
+              decoding="async"
+              className="mx-auto"
+              sizes="(max-width: 768px) 100vw, 300px" // Optimiza el tamaño según la pantalla
             />
+          </Link>
             <h2 className="text-center text-3xl font-extrabold text-gray-900">Crea tu cuenta</h2>
             <p className="mt-2 text-center text-sm text-gray-600">
               ¿Ya tienes una cuenta?{' '}
-              <Link href="/login" className="font-medium text-cyan-600 hover:text-cyan-500">Inicia sesión</Link>
+              <Link href="/login" className="font-medium text-cyan-700 hover:text-cyan-800">Inicia sesión</Link>
             </p>
-          </Link>
 
           <div className="flex flex-col space-y-4">
             <ButtonRedesSociales provider="facebook" text="Continuar con Facebook" />
@@ -39,7 +41,7 @@ const Registrarse: React.FC = () => {
           </div>
 
           <div className="relative flex justify-center items-center my-4">
-            <span className="absolute bg-white px-4 text-gray-500">O</span>
+            <span className="absolute bg-white px-4 text-stone-700">O</span>
             <hr className="w-full border-gray-300" />
           </div>
 

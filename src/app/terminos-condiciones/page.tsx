@@ -58,7 +58,7 @@ const TerminosCondiciones: React.FC = () => {
 
           <h2 className="text-2xl font-semibold mb-4">8. Contacto</h2>
           <p className="mb-4">
-            Si tienes preguntas sobre estos términos, puedes contactarnos a través del correo <a href="mailto:amaserelcambio@gmail.com" className="text-cyan-600 hover:underline">amaserelcambio@gmail.com</a>.
+            Si tienes preguntas sobre estos términos, puedes contactarnos a través del correo <a href="mailto:amaserelcambio@gmail.com" className="text-cyan-800 hover:underline">amaserelcambio@gmail.com</a>.
           </p>
 
           <p className="text-sm text-gray-500">Última actualización: 27 agosto 2024</p>
