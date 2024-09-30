@@ -30,12 +30,12 @@ export default function RootLayout({
         className={montserrat.variable}
         style={{ backgroundColor: "white" }}
       >
-        {/* Google Analytics script */}
+        {/* Agregamos el script de Google Analytics */}
         {GA_TRACKING_ID && (
         <>
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-            strategy="lazyOnload" // Para cargar después
+            strategy="lazyOnload" // Cambia a lazyOnload para cargar después
           />
           <Script id="google-analytics" strategy="lazyOnload">
             {`
@@ -47,20 +47,6 @@ export default function RootLayout({
           </Script>
         </>
       )}
-        {/* Google Maps Optimización */}
-        <Script id="google-maps" strategy="lazyOnload">
-          {`
-            function loadGoogleMaps() {
-              var script = document.createElement('script');
-              script.src = 'https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap';
-              script.async = true;
-              document.head.appendChild(script);
-            }
-
-            window.onload = loadGoogleMaps; // Cargar Google Maps después de que la página cargue completamente
-          `}
-        </Script>
-
         <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>
