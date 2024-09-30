@@ -17,13 +17,15 @@ const AfiliadoSection: React.FC = () => (
         </Link>
       </div>
       <div className="mt-8 lg:mt-0 lg:w-2/5 flex justify-center">
-        <Image
-          src="/images/jaguarcito.webp"
-          alt="Jaguar voluntario entregando comida"
-          width={400}
-          height={400}
-          className="rounded-lg shadow-2xl border-4 border-lime-600"
-        />
+      <Image
+        src="/images/jaguarcito.webp"
+        alt="Jaguar voluntario entregando comida"
+        width={400}
+        height={400}
+        layout="responsive"
+        sizes="(max-width: 400px) 100vw, 400px"
+        className="rounded-lg shadow-2xl border-4 border-lime-600"
+      />
       </div>
     </div>
   </section>
