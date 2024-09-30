@@ -3,7 +3,7 @@ import { FaPhoneAlt, FaEnvelope, FaWhatsapp } from 'react-icons/fa';
 
 const Contactanos: React.FC = () => {
   return (
-    <section className="py-16 mb-16 bg-violet-50 text-stone-700">
+    <section className="py-16 my-8 rounded-lg bg-violet-50 text-stone-700">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-cyan-600">Contáctanos</h2>
