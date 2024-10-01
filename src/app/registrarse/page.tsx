@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
-const ButtonRedesSociales = dynamic(() => import('../components/registro/RegistroRedes'), { ssr: false });
+//const ButtonRedesSociales = dynamic(() => import('../components/registro/RegistroRedes'), { ssr: false });
 const FormularioRegistro = dynamic(() => import('../components/registro/FormularioRegistro'), { ssr: false });
 
 const Registrarse: React.FC = () => {
@@ -34,8 +34,9 @@ const Registrarse: React.FC = () => {
               ¿Ya tienes una cuenta?{' '}
               <Link href="/login" className="font-medium text-cyan-700 hover:text-cyan-800">Inicia sesión</Link>
             </p>
-
-          <div className="flex flex-col space-y-4">
+            
+          {/* Queda pendiente */}
+          {/*<div className="flex flex-col space-y-4"> 
             <ButtonRedesSociales provider="facebook" text="Continuar con Facebook" />
             <ButtonRedesSociales provider="google" text="Continuar con Google" />
           </div>
@@ -43,7 +44,7 @@ const Registrarse: React.FC = () => {
           <div className="relative flex justify-center items-center my-4">
             <span className="absolute bg-white px-4 text-stone-700">O</span>
             <hr className="w-full border-gray-300" />
-          </div>
+          </div>*/}
 
           <FormularioRegistro />
         </div>

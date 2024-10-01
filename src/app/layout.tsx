@@ -5,6 +5,7 @@ import { Montserrat } from 'next/font/google';
 import Script from 'next/script'; // Importamos el componente Script para agregar Google Analytics
 import "./globals.css";
 import LayoutWrapper from "./client"; // Importar el componente separado
+import { AuthProvider } from "./context/AuthContext";
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -37,17 +38,23 @@ export default function RootLayout({
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
             strategy="lazyOnload" // Cambia a lazyOnload para cargar después
           />
-          <Script id="google-analytics" strategy="lazyOnload">
+          <Script id="google-analytics" strategy="afterInteractive">
             {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${GA_TRACKING_ID}');
+              window.addEventListener('load', function() {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_TRACKING_ID}');
+              });
             `}
           </Script>
         </>
       )}
-        <LayoutWrapper>{children}</LayoutWrapper>
+        <AuthProvider>
+          <LayoutWrapper>
+            {children}
+          </LayoutWrapper>
+        </AuthProvider>
       </body>
     </html>
   );

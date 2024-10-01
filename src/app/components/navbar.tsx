@@ -1,7 +1,8 @@
 "use client"; // Necesario para componentes del cliente
 
-import React, { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
+import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
+import { useAuth } from "../context/AuthContext";
 import {
   Bars3Icon,
   XMarkIcon,
@@ -11,12 +12,13 @@ import {
   ChatBubbleBottomCenterTextIcon,
   UsersIcon,
   PencilSquareIcon,
-} from '@heroicons/react/24/solid'; // Importamos los iconos necesarios
-import Image from 'next/image';
+} from "@heroicons/react/24/solid"; // Importamos los iconos necesarios
+import Image from "next/image";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const { isAdmin, isUser } = useAuth(); // Aquí accedemos al contexto
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -28,11 +30,9 @@ const Navbar: React.FC = () => {
       }
     };
 
-    // Agregar el listener para detectar clics fuera del menú
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      // Limpiar el listener al desmontar el componente
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [menuRef]);
 
@@ -44,12 +44,10 @@ const Navbar: React.FC = () => {
   return (
     <nav className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-xl z-50 shadow-md border-b-4 border-cyan-500">
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
-        
-        {/* Menú hamburguesa a la izquierda */}
         <button
           onClick={toggleMenu}
           className="p-2 w-10 h-10 text-sm rounded-lg hover:bg-stone-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-          aria-expanded={isOpen ? 'true' : 'false'}
+          aria-expanded={isOpen ? "true" : "false"}
         >
           <span className="sr-only">Open main menu</span>
           {isOpen ? (
@@ -59,7 +57,6 @@ const Navbar: React.FC = () => {
           )}
         </button>
 
-        {/* Logo centrado */}
         <div className="flex-grow flex px-4">
           <Link href="/" passHref>
             <div className="flex items-center space-x-2">
@@ -83,46 +80,86 @@ const Navbar: React.FC = () => {
           </Link>
         </div>
 
-        {/* Botón "Donar" en pantallas grandes */}
         <div className="space-x-4">
-          <Link href="/donar" className="bg-lime-700 text-white px-5 py-2 rounded-2xl hover:bg-lime-600 transition-all duration-300">
-            Donar
-          </Link>
+          {isAdmin && (
+            <Link
+              href="/dashboard"
+              className="bg-cyan-700 text-white px-5 py-2 rounded-2xl hover:bg-cyan-600 transition-all duration-300"
+            >
+              Dashboard
+            </Link>
+          )}
+          {!isAdmin && !isUser && (
+            <Link
+              href="/donar"
+              className="bg-lime-700 text-white px-5 py-2 rounded-2xl hover:bg-lime-600 transition-all duration-300"
+            >
+              Donar
+            </Link>
+          )}
         </div>
       </div>
 
-      {/* Menú desplegable en móvil */}
       {isOpen && (
         <div ref={menuRef} className="w-full shadow-xl">
           <ul className="flex flex-col font-medium mt-4 rounded-lg">
             <li>
-              <Link href="/registrarse" onClick={closeMenu} className="flex items-center py-2 px-3 text-gray-900 rounded hover:bg-stone-100">
-                <PencilSquareIcon className="w-5 h-5 mr-2 text-cyan-600" /> Registrarse
+              <Link
+                href="/registrarse"
+                onClick={closeMenu}
+                className="flex items-center py-2 px-3 text-gray-900 rounded hover:bg-stone-100"
+              >
+                <PencilSquareIcon className="w-5 h-5 mr-2 text-cyan-600" />{" "}
+                Registrarse
               </Link>
             </li>
             <li>
-              <Link href="/login" onClick={closeMenu} className="flex items-center py-2 px-3 text-gray-900 rounded hover:bg-stone-100">
-                <UserIcon className="w-5 h-5 mr-2 text-cyan-600" /> Iniciar Sesión
+              <Link
+                href="/login"
+                onClick={closeMenu}
+                className="flex items-center py-2 px-3 text-gray-900 rounded hover:bg-stone-100"
+              >
+                <UserIcon className="w-5 h-5 mr-2 text-cyan-600" /> Iniciar
+                Sesión
               </Link>
             </li>
             <li>
-              <Link href="/about" onClick={closeMenu} className="flex items-center py-2 px-3 text-gray-900 rounded hover:bg-stone-100">
-                <HomeIcon className="w-5 h-5 mr-2 text-cyan-600" /> Quiénes Somos
+              <Link
+                href="/about"
+                onClick={closeMenu}
+                className="flex items-center py-2 px-3 text-gray-900 rounded hover:bg-stone-100"
+              >
+                <HomeIcon className="w-5 h-5 mr-2 text-cyan-600" /> Quiénes
+                Somos
               </Link>
             </li>
             <li>
-              <Link href="/iniciativas" onClick={closeMenu} className="flex items-center py-2 px-3 text-gray-900 rounded hover:bg-stone-100">
-                <UsersIcon className="w-5 h-5 mr-2 text-cyan-600" /> Nuestras Iniciativas
+              <Link
+                href="/iniciativas"
+                onClick={closeMenu}
+                className="flex items-center py-2 px-3 text-gray-900 rounded hover:bg-stone-100"
+              >
+                <UsersIcon className="w-5 h-5 mr-2 text-cyan-600" /> Nuestras
+                Iniciativas
               </Link>
             </li>
             <li>
-              <Link href="/donar" onClick={closeMenu} className="flex items-center py-2 px-3 text-gray-900 rounded hover:bg-stone-100">
+              <Link
+                href="/donar"
+                onClick={closeMenu}
+                className="flex items-center py-2 px-3 text-gray-900 rounded hover:bg-stone-100"
+              >
                 <HeartIcon className="w-5 h-5 mr-2 text-red-600" /> Donaciones
               </Link>
             </li>
             <li>
-              <Link href="/contacto" onClick={closeMenu} className="flex items-center py-2 px-3 text-gray-900 rounded hover:bg-stone-100">
-                <ChatBubbleBottomCenterTextIcon className="w-5 h-5 mr-2 text-cyan-600" /> Contacto
+              <Link
+                href="/contacto"
+                onClick={closeMenu}
+                className="flex items-center py-2 px-3 text-gray-900 rounded hover:bg-stone-100"
+              >
+                <ChatBubbleBottomCenterTextIcon className="w-5 h-5 mr-2 text-cyan-600" />{" "}
+                Contacto
               </Link>
             </li>
           </ul>

@@ -39,8 +39,7 @@ const FantasticPhotoCardsSection: React.FC = () => {
                 <Image
                   src={card.imageUrl}
                   alt={card.title}
-                  layout="fill"
-                  objectFit="cover"
+                  fill
                   className="rounded-full"
                 />
               </div>
