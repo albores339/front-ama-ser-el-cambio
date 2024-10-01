@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const AfiliadoSection: React.FC = () => (
-  <section className="py-12 px-6 bg-violet-50 rounded-xl shadow-2xl">
+  <section className="py-12 px-6 bg-violet-50 rounded-xl shadow-lg">
     <div className="flex flex-col lg:flex-row items-center justify-center lg:space-x-12">
       <div className="text-center lg:text-left lg:w-3/5 pl-8">
         <h2 className="text-4xl font-bold mb-6 text-lime-700">Regístrate como Afiliado</h2>
@@ -22,7 +22,6 @@ const AfiliadoSection: React.FC = () => (
         alt="Jaguar voluntario entregando comida"
         width={400}
         height={400}
-        layout="responsive"
         sizes="(max-width: 400px) 100vw, 400px"
         className="rounded-lg shadow-2xl border-4 border-lime-600"
       />
