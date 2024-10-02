@@ -3,43 +3,81 @@
 "use client";
 
 import React from "react";
+import { UserGroupIcon, CurrencyDollarIcon, HeartIcon, PresentationChartBarIcon } from "@heroicons/react/24/solid"; // Cambiar a solid
+
+const StatCard = ({
+  label,
+  value,
+  icon: Icon,
+  gradient,
+}: {
+  label: string;
+  value: string | number;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  gradient: string;
+}) => (
+  <div className={`p-4 shadow-md rounded-lg text-white ${gradient}`}>
+    <div className="flex items-center">
+      <Icon className="h-8 w-8 mr-3" /> {/* Tamaño ajustado a 24px */}
+      <p className="text-gray-200">{label}</p>
+    </div>
+    <p className="text-3xl font-bold mt-2">{value}</p>
+  </div>
+);
 
 const Dashboard = () => {
+  const stats = [
+    {
+      label: "Afiliados",
+      value: "1,359",
+      icon: UserGroupIcon,
+      gradient: "bg-gradient-to-r from-cyan-500 to-cyan-800",
+    },
+    {
+      label: "Donaciones",
+      value: "$7,349.90",
+      icon: CurrencyDollarIcon,
+      gradient: "bg-gradient-to-r from-lime-600 to-lime-800",
+    },
+    {
+      label: "Beneficiarios",
+      value: 26,
+      icon: HeartIcon,
+      gradient: "bg-gradient-to-r from-cyan-500 to-cyan-800",
+    },
+    {
+      label: "Donatarios",
+      value: 476,
+      icon: PresentationChartBarIcon,
+      gradient: "bg-gradient-to-r from-lime-600 to-lime-800",
+    },
+  ];
+
   return (
-    <div className="flex min-h-screen bg-gray-100">
-      {/* Main content */}
-      <main className="flex-1 p-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-          <div className="bg-white p-4 shadow-md rounded-lg">
-            <p className="text-gray-500">Customers Online</p>
-            <p className="text-3xl font-bold">1,359</p>
-          </div>
-          <div className="bg-white p-4 shadow-md rounded-lg">
-            <p className="text-gray-500">Todays Sales</p>
-            <p className="text-3xl font-bold">$7,349.90</p>
-          </div>
-          <div className="bg-white p-4 shadow-md rounded-lg">
-            <p className="text-gray-500">Open Tickets</p>
-            <p className="text-3xl font-bold">26</p>
-          </div>
-          <div className="bg-white p-4 shadow-md rounded-lg">
-            <p className="text-gray-500">New Orders</p>
-            <p className="text-3xl font-bold">476</p>
-          </div>
+    <div className="flex min-h-screen bg-violet-100 rounded-lg">
+      <main className="flex-1 p-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+          {stats.map((stat, index) => (
+            <StatCard
+              key={index}
+              label={stat.label}
+              value={stat.value}
+              icon={stat.icon}
+              gradient={stat.gradient}
+            />
+          ))}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Chart Section */}
-          <div className="bg-white p-6 shadow-md rounded-lg">
+          <section className="bg-white p-6 shadow-md rounded-lg">
             <h2 className="text-xl font-bold mb-4">Sales Overview</h2>
-            <canvas id="salesChart" width="400" height="200"></canvas>
-          </div>
+            {/* Integrar gráfico aquí */}
+          </section>
 
-          {/* Traffic Sources */}
-          <div className="bg-white p-6 shadow-md rounded-lg">
+          <section className="bg-white p-6 shadow-md rounded-lg">
             <h2 className="text-xl font-bold mb-4">Traffic Sources</h2>
-            <canvas id="trafficChart" width="400" height="200"></canvas>
-          </div>
+            {/* Integrar gráfico aquí */}
+          </section>
         </div>
       </main>
     </div>

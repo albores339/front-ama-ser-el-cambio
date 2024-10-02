@@ -21,7 +21,7 @@ export default function RootLayout({
         className={`antialiased`}
         style={{ backgroundColor: "white" }}
       >
-        <div className="mt-20 max-w-screen-lg mx-auto bg-white">
+        <div className="mt-20 max-w-screen-xl mx-auto bg-white">
           {children}
         </div>
         <WhatsappButton />

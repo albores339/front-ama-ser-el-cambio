@@ -2,7 +2,7 @@
 import Link from 'next/link';
 
 const DonateSection: React.FC = () => (
-  <section id="donate" className="py-16 px-6 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white text-center rounded-lg shadow-lg">
+  <section id="donate" className="max-w-screen-lg mx-auto py-16 px-6 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white text-center rounded-lg shadow-lg">
     <div className="max-w-4xl mx-auto">
       <h2 className="text-4xl font-bold mb-4">Haz la diferencia con tu donación</h2>
       <p className="text-lg mb-6">
