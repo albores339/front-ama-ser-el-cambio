@@ -25,7 +25,7 @@ const FantasticPhotoCardsSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 text-stone-700">
+    <section className="py-16 text-stone-700 max-w-screen-lg mx-auto">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold mb-4">Nuestras Iniciativas</h2>
         <p className="text-lg">Descubre las acciones que estamos tomando para cambiar el mundo</p>

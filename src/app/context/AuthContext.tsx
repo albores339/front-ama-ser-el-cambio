@@ -30,8 +30,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     const savedToken = localStorage.getItem("token");
     const savedRole = localStorage.getItem("role"); // Obtener el rol almacenado en el localStorage
-    console.log("Token almacenado:", savedToken); 
-    console.log("Rol almacenado:", savedRole);
 
     if (savedToken && savedRole) {
       setToken(savedToken);
