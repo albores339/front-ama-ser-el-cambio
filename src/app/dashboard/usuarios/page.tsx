@@ -4,12 +4,20 @@ import React, { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 
+// Definir el tipo User basado en los datos que esperas recibir
+interface User {
+  _id: string;
+  name: string;
+  email: string;
+  role: string;
+}
+
 const MySwal = withReactContent(Swal);
 
 const UsersPage: React.FC = () => {
-  const [users, setUsers] = useState<any[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [users, setUsers] = useState<User[]>([]);  // Definimos el tipo User[]
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string>('');
 
   // Obtener usuarios al cargar la página
   useEffect(() => {
@@ -20,17 +28,21 @@ const UsersPage: React.FC = () => {
         if (!response.ok) {
           throw new Error('Error al obtener los usuarios');
         }
-        const data = await response.json();
+        const data: User[] = await response.json();
         setUsers(data);
         setLoading(false);
-      } catch (error: any) {
-        setError(error.message);
+      } catch (err: unknown) {  // Cambiamos el tipo de error a unknown
+        if (err instanceof Error) {
+          setError(err.message);  // Accedemos a message solo si es Error
+        } else {
+          setError('Error inesperado');
+        }
         setLoading(false);
       }
     };
 
     fetchUsers();
-  }, []); // El array vacío asegura que la función solo se ejecuta una vez al montar el componente
+  }, []);
 
   // Función para eliminar un usuario
   const handleDelete = async (id: string) => {
@@ -59,9 +71,13 @@ const UsersPage: React.FC = () => {
         setUsers(users.filter((user) => user._id !== id));
 
         MySwal.fire('¡Eliminado!', 'El usuario ha sido eliminado.', 'success');
-      } catch (error: any) {
-        MySwal.fire('Error', 'Hubo un problema al eliminar el usuario.', 'error');
-        console.error(error);
+      } catch (err: unknown) {  // Cambiamos el tipo de error a unknown
+        if (err instanceof Error) {
+          MySwal.fire('Error', err.message, 'error');
+        } else {
+          MySwal.fire('Error', 'Error inesperado', 'error');
+        }
+        console.error(err);
       }
     }
   };
@@ -80,7 +96,7 @@ const UsersPage: React.FC = () => {
             <div className="overflow-x-auto">
               <table className="min-w-full shadow-md rounded-lg mt-4">
                 <thead>
-                  <tr className="">
+                  <tr>
                     <th className="py-3 px-6 text-left">Nombre</th>
                     <th className="py-3 px-6 text-left">Email</th>
                     <th className="py-3 px-6 text-left">Rol</th>
