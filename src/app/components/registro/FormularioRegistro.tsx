@@ -50,7 +50,7 @@ const FormularioRegistro: React.FC = () => {
           confirmButtonText: 'Aceptar',
         }).then(() => {
           // Redirigir a la página principal o al dashboard
-          router.push('/dashboard');
+          router.push('/');
         });
       } else {
         Swal.fire({
