@@ -1,8 +1,15 @@
 import React from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
+import { useAuth } from '../context/AuthContext';// Importa el contexto
 
 const WhatsappButton: React.FC = () => {
+  const { isAdmin } = useAuth(); // Obtiene si es administrador desde el contexto
   const whatsappNumber = '5219611551352'; // Reemplaza con tu número de WhatsApp con código internacional
+
+  // Si el usuario es administrador, no mostrar el botón
+  if (isAdmin) {
+    return null;
+  }
 
   return (
     <a

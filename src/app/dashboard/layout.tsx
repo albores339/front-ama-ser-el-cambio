@@ -9,7 +9,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       <AdminAside />
 
       {/* Main content */}
-      <div className="w-3/4 flex-grow">
+      <div className="w-4/5 flex-grow">
         <main>{children}</main>
       </div>
     </div>

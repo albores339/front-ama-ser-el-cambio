@@ -54,7 +54,7 @@ const AdminMenu: React.FC<AdminMenuProps> = ({ closeMenu }) => (
     </li>
     <li>
       <Link
-        href="/"
+        href="/dashboard/donaciones"
         onClick={closeMenu}
         className="flex items-center py-2 px-3 text-gray-900 rounded hover:bg-stone-100"
       >
