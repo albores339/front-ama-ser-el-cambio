@@ -13,7 +13,7 @@ const DonationHero: React.FC = () => (
       priority
     />
     <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center">
-      <h1 className="text-5xl font-bold text-white drop-shadow-md m-4">Haz una Donación</h1>
+      <h1 className="text-5xl font-bold text-white drop-shadow-md m-4 text-center">Haz una Donación</h1>
       <p className="text-xl text-white mb-6 max-w-xl text-center">
         Tu donación puede marcar una diferencia en la vida de muchas personas. ¡Únete a nuestra misión y apoya el cambio!
       </p>

@@ -12,7 +12,7 @@ const Donaciones: React.FC = () => (
       <title>Donaciones | Ama Ser el Cambio AC</title>
       <meta name="description" content="Haz una donación para apoyar a Ama Ser el Cambio AC y sus proyectos en beneficio de los sectores más vulnerables de la sociedad." />
     </Head>
-    <main className="max-w-5xl mx-auto">
+    <main className="">
       <DonationHero />
       <DonationDetails />
       <PaypalDonation />
