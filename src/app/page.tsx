@@ -7,6 +7,7 @@ import DonateSection from './components/home/donar';
 import FantasticPhotoCardsSection from './components/home/cards';
 import Contactanos from './components/contactanos';
 import Map from './components/map';
+import AfiliadoCounter from './components/home/AfiliadoCounter';
 
 const Home: React.FC = () => (
   <>
@@ -19,6 +20,7 @@ const Home: React.FC = () => (
     <main>
       <HeroSection />
       <QuienesSomos />
+      <AfiliadoCounter/>
       <AfiliadoSection />
       <FantasticPhotoCardsSection />
       <DonateSection />

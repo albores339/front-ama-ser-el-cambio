@@ -17,7 +17,7 @@ const LayoutWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   return (
     <>
       {showLayout && <Navbar />}
-      <div className={showLayout ? "mt-20 max-w-screen-xl mx-auto bg-white" : "max-w-screen-lg mx-auto bg-white"}>
+      <div className={showLayout ? "mt-20 max-w-screen-2xl mx-auto bg-white" : "max-w-screen-lg mx-auto bg-white"}>
         {children}
       </div>
       {showLayout && <WhatsappButton />}

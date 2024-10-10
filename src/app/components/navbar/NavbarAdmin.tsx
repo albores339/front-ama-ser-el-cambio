@@ -12,7 +12,7 @@ interface NavbarAdminProps {
 }
 
 const NavbarAdmin: React.FC<NavbarAdminProps> = ({ isOpen, toggleMenu }) => (
-  <nav className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-xl z-50 shadow-md border-b-4 border-cyan-500">
+  <nav className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-2xl z-50 shadow-md border-b-4 border-cyan-500">
     <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
       <div className="flex flex-row gap-4">
         <MenuButton isOpen={isOpen} toggleMenu={toggleMenu} />
