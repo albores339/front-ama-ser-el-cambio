@@ -4,9 +4,7 @@ import Link from "next/link";
 import {
   HomeIcon,
   UsersIcon,
-  ChartBarIcon,
   InboxIcon,
-  CurrencyDollarIcon,
   MegaphoneIcon
 } from "@heroicons/react/24/solid";
 

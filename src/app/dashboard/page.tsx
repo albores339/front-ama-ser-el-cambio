@@ -9,8 +9,16 @@ import {
   CurrencyDollarIcon,
   HeartIcon,
   PresentationChartBarIcon,
-} from "@heroicons/react/24/solid"; // Cambiar a solid
+} from "@heroicons/react/24/solid";
 import Link from "next/link";
+
+interface Stat {
+  label: string;
+  value: number;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  gradient: string;
+  link: string;
+}
 
 const StatCard = ({
   label,
@@ -25,15 +33,15 @@ const StatCard = ({
 }) => (
   <div className={`p-4 shadow-md rounded-lg text-white ${gradient}`}>
     <div className="flex items-center">
-      <Icon className="h-8 w-8 mr-3" /> {/* Tamaño ajustado a 24px */}
-      <p className="">{label}</p>
+      <Icon className="h-8 w-8 mr-3" />
+      <p>{label}</p>
     </div>
     <p className="text-3xl font-bold mt-2">{value}</p>
   </div>
 );
 
 const Dashboard = () => {
-  const [stats, setStats] = useState<any[]>([]);
+  const [stats, setStats] = useState<Stat[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -69,7 +77,7 @@ const Dashboard = () => {
           },
           {
             label: "Donatarios",
-            value: 0, // O bien puedes obtener esto de otra API si lo necesitas
+            value: 0, // Puedes cambiar esto si lo necesitas
             icon: PresentationChartBarIcon,
             gradient: "bg-gradient-to-r from-lime-500 to-lime-800",
             link: "/dashboard/usuarios",
