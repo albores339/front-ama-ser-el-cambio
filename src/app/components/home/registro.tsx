@@ -38,7 +38,7 @@ const AfiliadoSection: React.FC = () => {
           <h2 className="text-4xl font-bold mb-6 text-cyan-700 flex flex-row gap-4 items-center">
             <p
               className={`text-stone-600 text-6xl underline ${
-                isAfiliado ? 'decoration-lime-500' : 'decoration-rose-500'
+                isAfiliado ? 'decoration-lime-500' : 'decoration-pink-500'
               } transition-transform duration-700`}
             >
               {isAfiliado ? '01' : '02'}
@@ -50,11 +50,11 @@ const AfiliadoSection: React.FC = () => {
               ? "Únete a nuestra comunidad y forma parte de quienes están haciendo el cambio. Regístrate ahora y empieza a colaborar con nosotros."
               : "Haz un cambio en el mundo donando a quienes más lo necesitan. Tu ayuda puede transformar vidas y crear un futuro mejor."}
           </p>
-          <div className="mb-6 w-full h-2 bg-gray-200 rounded-full">
+          <div className="mb-6 w-full h-1 bg-stone-200 rounded-full">
             <div
               style={{ width: `${(timer / 10) * 100}%` }}
-              className={`h-2 ${
-                isAfiliado ? 'bg-lime-500' : 'bg-rose-500'
+              className={`h-1 ${
+                isAfiliado ? 'bg-lime-500' : 'bg-pink-500'
               } rounded-full transition-all duration-1000`}
               aria-hidden="true"
             ></div>
@@ -78,7 +78,7 @@ const AfiliadoSection: React.FC = () => {
             priority
             sizes="(max-width: 400px) 100vw, 400px"
             className={`rounded-lg shadow-2xl border-4 ${
-              isAfiliado ? 'border-lime-600' : 'border-red-600'
+              isAfiliado ? 'border-lime-500' : 'border-pink-500'
             } transition-transform duration-700 ${isAfiliado ? 'scale-100' : 'scale-105'}`}
           />
         </div>

@@ -14,7 +14,7 @@ const Home: React.FC = () => (
     <Head>
       <title>Ama Ser el Cambio A.C.</title>
       <meta name="description" content="Página oficial de Ama Ser el Cambio AC, una asociación civil sin fines de lucro." />
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/favicon.ico" sizes="16x16" />
     </Head>
 
     <main>

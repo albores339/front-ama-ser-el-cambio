@@ -2,8 +2,14 @@
 
 "use client";
 
-import React from "react";
-import { UserGroupIcon, CurrencyDollarIcon, HeartIcon, PresentationChartBarIcon } from "@heroicons/react/24/solid"; // Cambiar a solid
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import {
+  UserGroupIcon,
+  CurrencyDollarIcon,
+  HeartIcon,
+  PresentationChartBarIcon,
+} from "@heroicons/react/24/solid"; // Cambiar a solid
 import Link from "next/link";
 
 const StatCard = ({
@@ -20,43 +26,66 @@ const StatCard = ({
   <div className={`p-4 shadow-md rounded-lg text-white ${gradient}`}>
     <div className="flex items-center">
       <Icon className="h-8 w-8 mr-3" /> {/* Tamaño ajustado a 24px */}
-      <p className="text-gray-200">{label}</p>
+      <p className="">{label}</p>
     </div>
     <p className="text-3xl font-bold mt-2">{value}</p>
   </div>
 );
 
 const Dashboard = () => {
-  const stats = [
-    {
-      label: "Afiliados",
-      value: "1,359",
-      icon: UserGroupIcon,
-      gradient: "bg-gradient-to-r from-cyan-500 to-cyan-800",
-      link: "/dashboard/usuarios"
-    },
-    {
-      label: "Donaciones",
-      value: "$7,349.90",
-      icon: CurrencyDollarIcon,
-      gradient: "bg-gradient-to-r from-lime-500 to-lime-800",
-      link: "/dashboard"
-    },
-    {
-      label: "Beneficiarios",
-      value: 26,
-      icon: HeartIcon,
-      gradient: "bg-gradient-to-r from-cyan-500 to-cyan-800",
-      link: "/dashboard/usuarios"
-    },
-    {
-      label: "Donatarios",
-      value: 476,
-      icon: PresentationChartBarIcon,
-      gradient: "bg-gradient-to-r from-lime-500 to-lime-800",
-      link: "/dashboard/usuarios"
-    },
-  ];
+  const [stats, setStats] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [usersResponse, contactsResponse, alertsResponse] = await Promise.all([
+          axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/users`),
+          axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/contact`),
+          axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/avisos`),
+        ]);
+
+        setStats([
+          {
+            label: "Afiliados",
+            value: usersResponse.data.length,
+            icon: UserGroupIcon,
+            gradient: "bg-gradient-to-r from-cyan-500 to-cyan-800",
+            link: "/dashboard/usuarios",
+          },
+          {
+            label: "Bandeja de entrada",
+            value: contactsResponse.data.length,
+            icon: CurrencyDollarIcon,
+            gradient: "bg-gradient-to-r from-lime-500 to-lime-800",
+            link: "/dashboard",
+          },
+          {
+            label: "Avisos",
+            value: alertsResponse.data.length,
+            icon: HeartIcon,
+            gradient: "bg-gradient-to-r from-cyan-500 to-cyan-800",
+            link: "/dashboard/avisos",
+          },
+          {
+            label: "Donatarios",
+            value: 0, // O bien puedes obtener esto de otra API si lo necesitas
+            icon: PresentationChartBarIcon,
+            gradient: "bg-gradient-to-r from-lime-500 to-lime-800",
+            link: "/dashboard/usuarios",
+          },
+        ]);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) return <div>Cargando...</div>;
 
   return (
     <div className="flex min-h-screen bg-violet-100 rounded-lg">

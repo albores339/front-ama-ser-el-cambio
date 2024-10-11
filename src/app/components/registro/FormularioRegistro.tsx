@@ -41,6 +41,7 @@ const FormularioRegistro: React.FC = () => {
       if (response.ok) {
         // Guardar el token en el localStorage o en cookies
         localStorage.setItem('token', result.token); // Puedes usar cookies si prefieres
+        localStorage.setItem('role', result.role); // Guarda el rol
 
         Swal.fire({
           title: 'Registro exitoso',
