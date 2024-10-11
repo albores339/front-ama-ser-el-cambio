@@ -4,14 +4,13 @@ import Link from 'next/link';
 
 const DonationHero: React.FC = () => (
   <div className="relative w-full h-96 mb-6">
-    <Image
-      src="/images/donacion.webp"
-      alt="Inspiración para donar"
-      layout="fill"
-      objectFit="cover"
-      className="rounded-lg shadow-2xl"
-      priority
-    />
+      <Image
+        src="/images/donacion.webp"
+        alt="Inspiración para donar"
+        fill // Esto hace que la imagen ocupe todo el contenedor
+        className="rounded-lg shadow-2xl object-cover" // Asegúrate de aplicar 'object-cover' aquí
+        priority
+      />
     <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center">
       <h1 className="text-5xl font-bold text-white drop-shadow-md m-4 text-center">Haz una Donación</h1>
       <p className="text-xl text-white mb-6 max-w-xl text-center">

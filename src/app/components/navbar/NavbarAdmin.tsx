@@ -4,7 +4,7 @@ import React from "react";
 import MenuButton from "./MenuButton";
 import Logo from "./Logo";
 import AdminMenu from "./AdminMenuMobile";
-import { BellIcon, CogIcon } from "@heroicons/react/24/solid";
+{/*import { BellIcon, CogIcon } from "@heroicons/react/24/solid";*/}
 
 interface NavbarAdminProps {
   isOpen: boolean;
@@ -25,7 +25,7 @@ const NavbarAdmin: React.FC<NavbarAdminProps> = ({ isOpen, toggleMenu }) => (
         >
           Dashboard
         </a>
-        <button className="relative">
+        {/*<button className="relative">
           <BellIcon className="w-8 h-8 text-cyan-700" />
           <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full text-xs px-2">
             5
@@ -33,7 +33,7 @@ const NavbarAdmin: React.FC<NavbarAdminProps> = ({ isOpen, toggleMenu }) => (
         </button>
         <button className="hover:text-cyan-500">
           <CogIcon className="w-8 h-8 text-stone-500" />
-        </button>
+        </button>*/}
       </div>
     </div>
 

@@ -6,7 +6,7 @@ import Footer from "./components/footer";
 import WhatsappButton from "./components/boton-chat";
 
 export const metadata: Metadata = {
-  title: "Ama Ser el Cambio",
+  title: "Ama Ser el Cambio A.C. | Asociación Civil",
   description: "Página oficial de Ama Ser el Cambio AC, una asociación civil sin fines de lucro.",
 };
 
