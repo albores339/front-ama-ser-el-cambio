@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Head from 'next/head';
 import HeroSection from './components/home/hero';
 import QuienesSomos from './components/home/about';
 import AfiliadoSection from './components/home/registro';
