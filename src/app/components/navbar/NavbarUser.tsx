@@ -19,7 +19,7 @@ const NavbarUser: React.FC<NavbarUserProps> = ({ isOpen, toggleMenu }) => (
       <div className="space-x-4">
         <a
           href="/perfil"
-          className="bg-lime-700 text-white px-5 py-2 rounded-2xl hover:bg-lime-600 transition-all duration-300"
+          className="bg-lime-700 font-bold text-white px-5 py-2 rounded-2xl hover:bg-lime-600 transition-all duration-300"
         >
           Perfil
         </a>

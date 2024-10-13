@@ -79,14 +79,14 @@ const Contactanos: React.FC = () => {
   };
 
   return (
-    <section className="py-16 my-8 bg-violet-50 text-stone-700 rounded-lg max-w-screen-lg mx-auto">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-cyan-600 text-center mb-12">Contáctanos</h2>
+    <section className="p-6 my-8 bg-violet-50 text-stone-700 rounded-lg mx-auto px-4">
+      <div className="mx-auto px-2">
+        <h2 className="text-4xl font-bold text-cyan-600 text-center">Contáctanos</h2>
         <p className="text-center m-2">Puedes tomar la información de contacto o dejarnos un mensaje y nosotros te responderemos lo más rápido posible</p>
 
-        <div className="flex flex-col md:flex-row justify-between space-y-12 md:space-x-12">
+        <div className="flex flex-col md:flex-row justify-between space-y-6 md:space-x-6 max-w-screen-lg mx-auto">
           {/* Formulario de contacto */}
-          <form onSubmit={handleSubmit} className="md:w-2/3 bg-white p-8 shadow-lg rounded-lg">
+          <form onSubmit={handleSubmit} className="md:w-2/3 bg-white p-4 shadow-lg rounded-lg">
             {["nombre", "email", "mensaje"].map((field) => (
               <div key={field} className="mb-6">
                 <label htmlFor={field} className="block text-sm font-medium text-gray-700 capitalize">
@@ -121,7 +121,7 @@ const Contactanos: React.FC = () => {
           </form>
 
           {/* Información de contacto */}
-          <div className="md:w-1/3 bg-cyan-700 text-white p-8 rounded-lg shadow-lg">
+          <div className="md:w-1/3 bg-cyan-700 text-white p-4 rounded-lg shadow-lg">
             <h3 className="text-2xl font-bold mb-6">Información de contacto</h3>
             <div className="flex items-center mb-4">
               <FaPhoneAlt className="h-6 w-6 mr-4" />
@@ -129,7 +129,7 @@ const Contactanos: React.FC = () => {
             </div>
             <div className="flex items-center mb-4">
               <FaEnvelope className="h-6 w-6 mr-4" />
-              <p>Email: amaserelcambio@gmail.com</p>
+              <p>Email: abidan@amaserelcambio.org</p>
             </div>
             <div className="flex items-center mb-4">
               <FaWhatsapp className="h-6 w-6 mr-4" />

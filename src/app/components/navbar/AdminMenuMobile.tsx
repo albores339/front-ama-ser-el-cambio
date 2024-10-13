@@ -23,12 +23,12 @@ const AdminMenu: React.FC<AdminMenuProps> = ({ closeMenu }) => {
   };
 
   return (
-    <ul className="flex flex-col font-medium mt-4 rounded-lg">
+    <ul className="flex flex-col py-10 mt-4 rounded-lg text-xl font-bold text-stone-700 mx-8">
       <li>
         <Link
           href="/"
           onClick={closeMenu}
-          className="flex items-center py-2 px-3 text-gray-900 rounded hover:bg-stone-100"
+          className="flex items-center py-2 px-3 hover:bg-cyan-700 hover:text-white rounded"
         >
           <HomeModernIcon className="w-5 h-5 mr-2 text-cyan-600" /> Home
         </Link>
@@ -37,7 +37,7 @@ const AdminMenu: React.FC<AdminMenuProps> = ({ closeMenu }) => {
         <Link
           href="/dashboard"
           onClick={closeMenu}
-          className="flex items-center py-2 px-3 text-gray-900 rounded hover:bg-stone-100"
+          className="flex items-center py-2 px-3 rounded hover:bg-cyan-700 hover:text-white"
         >
           <PencilSquareIcon className="w-5 h-5 mr-2 text-cyan-600" /> Dashboard
         </Link>
@@ -46,7 +46,7 @@ const AdminMenu: React.FC<AdminMenuProps> = ({ closeMenu }) => {
         <Link
           href="/dashboard/usuarios"
           onClick={closeMenu}
-          className="flex items-center py-2 px-3 text-gray-900 rounded hover:bg-stone-100"
+          className="flex items-center py-2 px-3 rounded hover:bg-cyan-700 hover:text-white"
         >
           <UsersIcon className="w-5 h-5 mr-2 text-cyan-600" /> Usuarios
         </Link>
@@ -55,7 +55,7 @@ const AdminMenu: React.FC<AdminMenuProps> = ({ closeMenu }) => {
         <Link
           href="/dashboard/inbox"
           onClick={closeMenu}
-          className="flex items-center py-2 px-3 text-gray-900 rounded hover:bg-stone-100"
+          className="flex items-center py-2 px-3 rounded hover:bg-cyan-700 hover:text-white"
         >
           <InboxIcon className="w-5 h-5 mr-2 text-cyan-600" /> Bandeja de Entrada
         </Link>
@@ -64,7 +64,7 @@ const AdminMenu: React.FC<AdminMenuProps> = ({ closeMenu }) => {
         <Link
           href="/dashboard/avisos"
           onClick={closeMenu}
-          className="flex items-center py-2 px-3 text-gray-900 rounded hover:bg-stone-100"
+          className="flex items-center py-2 px-3 rounded hover:bg-cyan-700 hover:text-white"
         >
           <MegaphoneIcon className="w-5 h-5 mr-2 text-cyan-600" /> Avisos
         </Link>
@@ -72,7 +72,7 @@ const AdminMenu: React.FC<AdminMenuProps> = ({ closeMenu }) => {
       <li>
         <button
           onClick={handleLogout}
-          className="flex items-center py-2 px-3 text-gray-900 rounded hover:bg-stone-100 w-full text-left"
+          className="flex items-center py-2 px-3 rounded hover:bg-cyan-700 hover:text-white w-full text-left"
         >
           <HomeIcon className="w-5 h-5 mr-2 text-cyan-600" /> Cerrar Sesión
         </button>

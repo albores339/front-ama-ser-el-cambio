@@ -1,5 +1,4 @@
-// pages/index.tsx
-import Head from 'next/head';
+import type { Metadata } from 'next';
 import HeroSection from './components/home/hero';
 import QuienesSomos from './components/home/about';
 import AfiliadoSection from './components/home/registro';
@@ -9,14 +8,13 @@ import Contactanos from './components/contactanos';
 import Map from './components/map';
 import AfiliadoCounter from './components/home/AfiliadoCounter';
 
+export const metadata: Metadata = {
+  title: "Ama Ser el Cambio A.C. | Asociación Civil",
+  description: "Página oficial de Ama Ser el Cambio A.C, una asociación civil sin fines de lucro ni afinidad política o religiosa, ubicados en Tuxtla Gutiérrez, Chiapas.",
+};
+
 const Home: React.FC = () => (
   <>
-    <Head>
-      <title>Ama Ser el Cambio A.C.</title>
-      <meta name="description" content="Página oficial de Ama Ser el Cambio AC, una asociación civil sin fines de lucro." />
-      <link rel="icon" href="/favicon.ico" sizes="16x16" />
-    </Head>
-
     <main>
       <HeroSection />
       <QuienesSomos />

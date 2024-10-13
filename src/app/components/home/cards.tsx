@@ -8,33 +8,33 @@ const FantasticPhotoCardsSection: React.FC = () => {
       title: 'Apoyo al Deporte',
       imageUrl: '/images/deporte.jpeg',
       description: 'Entrega de Trofeos en torneo a Jóvenes de Albergues.',
-      gradient: 'from-red-500 to-yellow-500',
+      gradient: 'from-cyan-500 from-30% via-cyan-700 via-50% to-pink-500 to-80%',
     },
     {
       title: 'Apoyo Alimenticio',
       imageUrl: '/images/comida.jpg',
       description: 'Reparto de alimentos en hospitales y asilos.',
-      gradient: 'from-cyan-300 to-blue-500',
+      gradient: 'from-cyan-500 from-30% via-cyan-700 via-50% to-pink-500 to-80%',
     },
     {
       title: 'Apoyo Ciudadano',
       imageUrl: '/images/ciudadano.jpeg',
       description: 'Observadores Electorales en el Proceso de Elecciones 2024.',
-      gradient: 'from-lime-500 to-green-500',
+      gradient: 'from-cyan-500 from-30% via-cyan-700 via-50% to-pink-500 to-80%',
     },
   ];
 
   return (
-    <section className="py-16 text-stone-600 max-w-screen-lg mx-auto">
+    <section className="py-16 text-stone-600 max-w-screen-xl mx-auto px-4">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold mb-4 text-cyan-700">Nuestras Iniciativas</h2>
         <p className="text-lg">Descubre las acciones que estamos tomando para cambiar el mundo</p>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-8 items-center">
+      <div className="flex flex-col gap-4 lg:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8 items-center">
         {cards.map((card, index) => (
           <div key={index} className="relative flex flex-col items-center">
-            <div className={`relative bg-gradient-to-tr ${card.gradient} p-2 rounded-full shadow-2xl hover:shadow-xl transform hover:scale-105 transition-transform duration-300 animated-border`}>
+            <div className={`relative bg-gradient-to-tr ${card.gradient} p-1 rounded-full shadow-2xl hover:shadow-xl transform hover:scale-105 transition-transform duration-300 animated-border mb-4`}>
               <div className="relative w-72 h-72 rounded-full overflow-hidden aspect-square">
                 <Image
                   src={card.imageUrl}
