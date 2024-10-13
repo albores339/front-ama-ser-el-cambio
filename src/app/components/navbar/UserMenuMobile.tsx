@@ -23,12 +23,12 @@ const UserMenu: React.FC<UserMenuProps> = ({ closeMenu }) => {
   };
 
   return (
-    <ul className="flex flex-col font-medium mt-4 rounded-lg">
+    <ul className="flex flex-col font-bold mt-4 rounded-lg text-stone-700 mx-8 py-10 text-xl">
       <li>
         <Link
           href="/perfil"
           onClick={closeMenu}
-          className="flex items-center py-2 px-3 text-gray-900 rounded hover:bg-stone-100"
+          className="flex items-center py-2 px-3 rounded hover:bg-cyan-700 hover:text-white"
         >
           <PencilSquareIcon className="w-5 h-5 mr-2 text-cyan-600" /> Mi Perfil
         </Link>
@@ -37,7 +37,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ closeMenu }) => {
         <Link
           href="/about"
           onClick={closeMenu}
-          className="flex items-center py-2 px-3 text-gray-900 rounded hover:bg-stone-100"
+          className="flex items-center py-2 px-3 rounded hover:bg-cyan-700 hover:text-white"
         >
           <HomeIcon className="w-5 h-5 mr-2 text-cyan-600" /> Quiénes Somos
         </Link>
@@ -46,7 +46,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ closeMenu }) => {
         <Link
           href="/iniciativas"
           onClick={closeMenu}
-          className="flex items-center py-2 px-3 text-gray-900 rounded hover:bg-stone-100"
+          className="flex items-center py-2 px-3 rounded hover:bg-cyan-700 hover:text-white"
         >
           <UsersIcon className="w-5 h-5 mr-2 text-cyan-600" /> Nuestras Iniciativas
         </Link>
@@ -55,7 +55,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ closeMenu }) => {
         <Link
           href="/donar"
           onClick={closeMenu}
-          className="flex items-center py-2 px-3 text-gray-900 rounded hover:bg-stone-100"
+          className="flex items-center py-2 px-3 rounded hover:bg-cyan-700 hover:text-white"
         >
           <HeartIcon className="w-5 h-5 mr-2 text-red-600" /> Donaciones
         </Link>
@@ -64,7 +64,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ closeMenu }) => {
         <Link
           href="/contacto"
           onClick={closeMenu}
-          className="flex items-center py-2 px-3 text-gray-900 rounded hover:bg-stone-100"
+          className="flex items-center py-2 px-3 rounded hover:bg-cyan-700 hover:text-white"
         >
           <ChatBubbleBottomCenterTextIcon className="w-5 h-5 mr-2 text-cyan-600" /> Contacto
         </Link>
@@ -72,7 +72,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ closeMenu }) => {
       <li>
         <button
           onClick={handleLogout}
-          className="flex items-center py-2 px-3 text-gray-900 rounded hover:bg-stone-100 w-full text-left"
+          className="flex items-center py-2 px-3 rounded hover:bg-cyan-700 hover:text-white w-full text-left"
         >
           <ArrowRightEndOnRectangleIcon className="w-5 h-5 mr-2 text-cyan-600" /> Cerrar Sesión
         </button>

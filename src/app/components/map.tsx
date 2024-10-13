@@ -20,7 +20,7 @@ const Map: React.FC = () => {
             title="Mapa de la ubicación de Ama Ser el Cambio"
             width="100%"
             height="100%"
-            style={{ border: 0 }}
+            style={{ border: 0, borderRadius: '10px' }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

@@ -29,23 +29,7 @@ const Footer: React.FC = () => {
 
         <hr className="my-4 border-gray-200" />
 
-        <div className="flex justify-between items-center">
-          <span className="text-sm">&copy; 2024 AMA Ser el Cambio AC. Todos los derechos reservados.</span>
-
-          <div className="flex space-x-4">
-            <a href="https://www.facebook.com/profile.php?id=61558179819875" aria-label="Facebook">
-              <FaFacebook className="h-5 w-5" />
-            </a>
-            <a href="https://twitter.com" aria-label="Twitter">
-              <FaTwitter className="h-5 w-5" />
-            </a>
-            <a href="https://www.instagram.com/amaserelcambio/" aria-label="Instagram">
-              <FaInstagram className="h-5 w-5" />
-            </a>
-          </div>
-        </div>
-
-        <div className="flex justify-center mt-4">
+        <div className="flex justify-center my-4">
           <a 
             href="/aviso-privacidad" 
             className="text-sm hover:underline mr-4"
@@ -58,6 +42,27 @@ const Footer: React.FC = () => {
           >
             Términos y Condiciones
           </a>
+        </div>
+
+        <div className="flex justify-between items-center">
+          <div className='flex flex-col'>
+            <span className="text-sm">&copy; 2024 AMA Ser el Cambio AC. Todos los derechos reservados.</span>
+            <span className='flex justify-center text-sm items-center mx-auto'>
+              Diseñado y desarrollado por Juan de Dios Albores Hernández ®
+            </span>
+          </div>
+
+          <div className="flex space-x-4">
+            <a href="https://www.facebook.com/profile.php?id=61558179819875" aria-label="Facebook">
+              <FaFacebook className="h-5 w-5" />
+            </a>
+            <a href="https://twitter.com" aria-label="Twitter">
+              <FaTwitter className="h-5 w-5" />
+            </a>
+            <a href="https://www.instagram.com/amaserelcambio/" aria-label="Instagram">
+              <FaInstagram className="h-5 w-5" />
+            </a>
+          </div>
         </div>
       </div>
     </footer>
