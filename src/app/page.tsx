@@ -10,7 +10,7 @@ import AfiliadoCounter from './components/home/AfiliadoCounter';
 
 export const metadata: Metadata = {
   title: "Ama Ser el Cambio A.C. | Asociación Civil",
-  description: "Página oficial de Ama Ser el Cambio A.C, una asociación civil sin fines de lucro ni afinidad política o religiosa.",
+  description: "Página oficial de Ama Ser el Cambio A.C, una asociación civil sin fines de lucro ni afinidad política o religiosa, ubicados en Tuxtla Gutiérrez, Chiapas.",
 };
 
 const Home: React.FC = () => (
