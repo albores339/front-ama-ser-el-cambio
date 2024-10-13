@@ -25,13 +25,13 @@ const FantasticPhotoCardsSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 text-stone-600 max-w-screen-lg mx-auto">
+    <section className="py-16 text-stone-600 max-w-screen-xl mx-auto">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold mb-4 text-cyan-700">Nuestras Iniciativas</h2>
         <p className="text-lg">Descubre las acciones que estamos tomando para cambiar el mundo</p>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-8 items-center">
+      <div className="flex flex-col gap-4 lg:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8 items-center">
         {cards.map((card, index) => (
           <div key={index} className="relative flex flex-col items-center">
             <div className={`relative bg-gradient-to-tr ${card.gradient} p-2 rounded-full shadow-2xl hover:shadow-xl transform hover:scale-105 transition-transform duration-300 animated-border`}>

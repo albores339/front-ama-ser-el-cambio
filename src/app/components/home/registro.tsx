@@ -31,18 +31,17 @@ const AfiliadoSection: React.FC = () => {
   };
 
   return (
-    <section className="py-12 px-6 bg-violet-50 rounded-xl shadow-lg max-w-screen-lg mx-auto">
-      <h1 className="sr-only">Regístrate como Afiliado o Donatario</h1>
-      <div className="flex flex-col lg:flex-row items-center justify-center lg:space-x-12">
-        <div className="text-center lg:text-left lg:w-3/5 pl-8">
-          <h2 className="text-4xl font-bold mb-6 text-cyan-700 flex flex-row gap-4 items-center">
-            <p
-              className={`text-stone-600 text-6xl underline ${
+    <section className="py-12 px-6 bg-violet-50 rounded-xl shadow-lg mx-auto">
+      <div className="flex flex-col lg:flex-row items-center justify-center lg:space-x-12 max-w-screen-lg mx-auto">
+        <div className="text-center lg:text-left lg:w-3/5 pl-8 mx-auto items-center justify-center">
+        <p
+              className={`text-stone-600 font-bold text-6xl underline ${
                 isAfiliado ? 'decoration-lime-500' : 'decoration-pink-500'
               } transition-transform duration-700`}
             >
               {isAfiliado ? '01' : '02'}
             </p>
+          <h2 className="text-4xl font-bold my-6 text-cyan-700">
             {isAfiliado ? "Regístrate como Afiliado" : "Regístrate como Donatario"}
           </h2>
           <p className="text-lg leading-relaxed text-stone-700 mb-8">

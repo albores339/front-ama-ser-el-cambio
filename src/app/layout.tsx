@@ -1,29 +1,30 @@
 // src/app/layout.tsx
+"use client"; // Marcar el componente como Client Component
 
-import type { Metadata } from "next";
 import { Montserrat } from 'next/font/google';
-import Script from 'next/script'; // Importamos el componente Script para agregar Google Analytics
+import Script from 'next/script';
 import "./globals.css";
-import LayoutWrapper from "./client"; // Importar el componente separado
 import { AuthProvider } from "./context/AuthContext";
+import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/footer";
+import WhatsappButton from "./components/boton-chat";
+import { usePathname } from "next/navigation";
 
 const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['400', '700'], // Puedes agregar más pesos según lo necesites
-  variable: '--font-montserrat', // Nombre de la variable CSS que puedes usar luego
+  weight: ['400', '700'],
+  variable: '--font-montserrat',
 });
-
-export const metadata: Metadata = {
-  title: "Ama Ser el Cambio A.C. | Asociación Civil",
-  description: "Página oficial de Ama Ser el Cambio A.C, una asociación civil sin fines de lucro ni afinidad política o religiosa.",
-};
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
-  const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID; // Cargar desde variables de entorno
+}) {
+  const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID;
+  const pathname = usePathname();
+  const noLayoutPages = ["/login", "/registrarse"];
+  const showLayout = !noLayoutPages.includes(pathname);
 
   return (
     <html lang="es">
@@ -31,29 +32,26 @@ export default function RootLayout({
         className={montserrat.variable}
         style={{ backgroundColor: "white" }}
       >
-        {/* Agregamos el script de Google Analytics */}
         {GA_TRACKING_ID && (
-        <>
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-            strategy="lazyOnload" // Cambia a lazyOnload para cargar después
-          />
-          <Script id="google-analytics" strategy="afterInteractive">
-            {`
-              window.addEventListener('load', function() {
+          <>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} strategy="lazyOnload" />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
                 gtag('config', '${GA_TRACKING_ID}');
-              });
-            `}
-          </Script>
-        </>
-      )}
+              `}
+            </Script>
+          </>
+        )}
         <AuthProvider>
-          <LayoutWrapper>
+          {showLayout && <Navbar />}
+          <div className={showLayout ? "mt-20 mx-auto bg-white" : "max-w-screen-lg mx-auto bg-white"}>
             {children}
-          </LayoutWrapper>
+          </div>
+          {showLayout && <WhatsappButton />}
+          {showLayout && <Footer />}
         </AuthProvider>
       </body>
     </html>

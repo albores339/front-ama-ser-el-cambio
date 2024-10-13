@@ -14,8 +14,10 @@ const Donaciones: React.FC = () => (
     </Head>
     <main className="">
       <DonationHero />
-      <DonationDetails />
-      <PaypalDonation />
+      <div className='max-w-screen-lg mx-auto'>
+        <DonationDetails />
+        <PaypalDonation />
+      </div>
     </main>
   </>
 );
