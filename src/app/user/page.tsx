@@ -51,17 +51,17 @@ function BentoCard({
 function GetGradient() {
   return (
     <BentoCard
-      title="Gradient"
+      title="Proximos eventos"
       icon={<BarChart size={24} />}
-      description={<span>A gradient is a smooth transition from one color to another.</span>}
-      className="sm:col-span-1 sm:row-span-2"
+      description={<span>Da click aquí y entérate qué estamos haciendo, únete, recuerda que unidos hacemos la fuerza.</span>}
+      className="sm:col-span-1 sm:row-span-2 shadow-lg"
       gradient="from-cyan-900 via-60% via-sky-600 to-indigo-600"
     >
-      <div className="group relative flex cursor-pointer flex-col justify-end rounded-md bg-zinc-950 p-2 text-2xl tracking-tight text-gray-100 md:text-4xl">
-        <div className="font-light">Get</div>
-        <div className="-mt-2 font-bold">Gradients</div>
+      <div className="group relative flex cursor-pointer flex-col justify-end rounded-md bg-zinc-900 p-2 text-2xl tracking-tight text-white md:text-4xl">
+        <div className="font-light">Ver</div>
+        <div className="-mt-2 font-bold">Próximos Eventos</div>
         <div className="flex h-6 w-6 items-center justify-center rounded-full border bg-white transition-all duration-700 group-hover:rotate-[360deg] md:h-8 md:w-8">
-          <ArrowRight size={16} className="text-blue-600" />
+          <ArrowRight size={16} className="text-cyan-600" />
         </div>
         <div className="absolute right-2 top-2 h-2 w-2 rounded-full bg-white opacity-50 transition-all duration-700 group-hover:opacity-25" />
       </div>
@@ -72,14 +72,14 @@ function GetGradient() {
 function LinearGradient() {
   return (
     <BentoCard
-      title="Linear Gradient"
+      title="Avisos"
       icon={<GitBranch size={24} />}
-      description="A linear gradient is a gradient that goes in a straight line."
+      description="Este será el medio de comuniación entre los administradores de la web y la comunidad."
       gradient="from-red-300 via-60% via-rose-300 to-red-200"
-      className="group sm:col-span-1"
+      className="group sm:col-span-1 shadow-lg"
     >
-      <div className="h-4 w-full rounded-sm bg-gray-100 group-hover:animate-pulse group-hover:bg-gray-300" />
-      <div className="h-4 w-1/2 rounded-sm bg-gray-100 group-hover:animate-pulse group-hover:bg-gray-300" />
+      <div className="h-4 w-full rounded-sm bg-gray-100 group-hover:animate-pulse group-hover:bg-stone-300" />
+      <div className="h-4 w-1/2 rounded-sm bg-gray-100 group-hover:animate-pulse group-hover:bg-stone-300" />
     </BentoCard>
   );
 }
@@ -91,7 +91,7 @@ function RadialGradient() {
       icon={<LineChart size={24} />}
       description="A radial gradient is a gradient that goes in a circular direction."
       gradient="from-lime-300 via-60% via-green-200 to-lime-200"
-      className="group sm:col-span-1"
+      className="group sm:col-span-1 shadow-lg"
     >
       <div className="flex w-full flex-row justify-end gap-2 rounded border-yellow-200 bg-yellow-100 p-2">
         <HeartPulse
@@ -114,18 +114,18 @@ function RadialGradient() {
 function ConicGradient() {
   return (
     <BentoCard
-      title="Conic Gradient"
+      title="Comunidad"
       icon={<TypeIcon size={24} />}
-      description="A conic gradient is a gradient that goes in a circular direction."
+      description="¡Crea un post con tus fotos de los eventos a los que asistas!. Compartenos tu experiencia, sé la inspiración de los demás 😉"
       gradient="from-cyan-900 via-60% via-sky-600 to-indigo-600"
-      className="sm:col-span-2"
+      className="sm:col-span-2 shadow-lg"
     />
   );
 }
 
 export default function Gradient() {
   return (
-    <div className="bg-zinc-950 p-4">
+    <div className="max-w-screen-xl py-10 mx-auto px-2 md:px-8">
       <div className="grid grid-cols-1 gap-4 text-black sm:grid-cols-3 lg:grid-cols-3">
         <GetGradient />
         <LinearGradient />

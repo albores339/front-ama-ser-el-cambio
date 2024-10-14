@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Link from "next/link";
-import { useAuth } from "@/app/context/AuthContext"; // Adjust the path as necessary
+import Swal from "sweetalert2";
+import { useAuth } from "@/app/context/AuthContext"; // Ajusta la ruta según sea necesario
 import {
-  HomeIcon,
-  InboxIcon,
-  MegaphoneIcon,
-  UsersIcon,
   HomeModernIcon,
   PencilSquareIcon,
+  UsersIcon,
+  InboxIcon,
+  MegaphoneIcon,
+  ArrowRightEndOnRectangleIcon,
 } from "@heroicons/react/24/solid";
 
 interface AdminMenuProps {
@@ -15,15 +16,37 @@ interface AdminMenuProps {
 }
 
 const AdminMenu: React.FC<AdminMenuProps> = ({ closeMenu }) => {
-  const { logout } = useAuth(); // Get the logout function from the context
+  const { logout } = useAuth();
+  const menuRef = useRef<HTMLUListElement>(null);
 
   const handleLogout = () => {
-    logout(); // Call the logout function
-    closeMenu(); // Optionally close the menu after logout
+    logout();
+    closeMenu();
+    Swal.fire({
+      title: 'Sesión cerrada',
+      text: 'Has cerrado sesión exitosamente.',
+      icon: 'success',
+      timer: 2000,
+      timerProgressBar: true,
+      showConfirmButton: false,
+    });
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        closeMenu();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [closeMenu]);
+
   return (
-    <ul className="flex flex-col py-10 mt-4 rounded-lg text-xl font-bold text-stone-700 mx-8">
+    <ul ref={menuRef} className="flex flex-col py-10 mt-4 rounded-lg text-xl font-semibold text-stone-700 mx-8">
       <li>
         <Link
           href="/"
@@ -74,7 +97,7 @@ const AdminMenu: React.FC<AdminMenuProps> = ({ closeMenu }) => {
           onClick={handleLogout}
           className="flex items-center py-2 px-3 rounded hover:bg-cyan-700 hover:text-white w-full text-left"
         >
-          <HomeIcon className="w-5 h-5 mr-2 text-cyan-600" /> Cerrar Sesión
+          <ArrowRightEndOnRectangleIcon className="w-5 h-5 mr-2 text-cyan-600" /> Cerrar Sesión
         </button>
       </li>
     </ul>

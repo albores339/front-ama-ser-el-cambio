@@ -47,7 +47,7 @@ export default function RootLayout({
         )}
         <AuthProvider>
           {showLayout && <Navbar />}
-          <div className={showLayout ? "mt-20 mx-auto bg-white" : "max-w-screen-lg mx-auto bg-white"}>
+          <div className={showLayout ? "mt-20 mx-auto bg-white" : "mx-auto bg-white"}>
             {children}
           </div>
           {showLayout && <WhatsappButton />}

@@ -75,7 +75,7 @@ const BandejaEntrada: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen bg-violet-50 py-8 px-4 rounded-lg">
+    <div className="min-h-screen py-8 px-4 rounded-lg">
       <h1 className="text-2xl font-bold mb-6 text-center">Bandeja de Entrada</h1>
 
       {/* Buscador */}
