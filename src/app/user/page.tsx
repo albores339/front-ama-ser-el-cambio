@@ -1,13 +1,13 @@
 import { ReactNode } from "react";
 import {
   ArrowRight,
-  BarChart,
   BookPlus,
-  GitBranch,
+  Calendar,
   HeartPulse,
-  LineChart,
+  Megaphone,
   Sun,
-  TypeIcon,
+  User,
+  Users,
 } from "lucide-react";
 
 import MovingGradient from "../components/animata/background/moving-gradient";
@@ -51,8 +51,8 @@ function BentoCard({
 function GetGradient() {
   return (
     <BentoCard
-      title="Proximos eventos"
-      icon={<BarChart size={24} />}
+      title="Próximos Eventos"
+      icon={<Calendar size={24} />}
       description={<span>Da click aquí y entérate qué estamos haciendo, únete, recuerda que unidos hacemos la fuerza.</span>}
       className="sm:col-span-1 sm:row-span-2 shadow-lg"
       gradient="from-cyan-900 via-60% via-sky-600 to-indigo-600"
@@ -73,8 +73,8 @@ function LinearGradient() {
   return (
     <BentoCard
       title="Avisos"
-      icon={<GitBranch size={24} />}
-      description="Este será el medio de comuniación entre los administradores de la web y la comunidad."
+      icon={<Megaphone size={24} />}
+      description="Este será el medio de comunicación entre los administradores de la web y la comunidad."
       gradient="from-red-300 via-60% via-rose-300 to-red-200"
       className="group sm:col-span-1 shadow-lg"
     >
@@ -87,9 +87,9 @@ function LinearGradient() {
 function RadialGradient() {
   return (
     <BentoCard
-      title="Radial Gradient"
-      icon={<LineChart size={24} />}
-      description="A radial gradient is a gradient that goes in a circular direction."
+      title="Mi Perfil"
+      icon={<User size={24} />}
+      description="Descríbenos más de ti."
       gradient="from-lime-300 via-60% via-green-200 to-lime-200"
       className="group sm:col-span-1 shadow-lg"
     >
@@ -115,8 +115,8 @@ function ConicGradient() {
   return (
     <BentoCard
       title="Comunidad"
-      icon={<TypeIcon size={24} />}
-      description="¡Crea un post con tus fotos de los eventos a los que asistas!. Compartenos tu experiencia, sé la inspiración de los demás 😉"
+      icon={<Users size={24} />}
+      description="¡Crea un post con tus fotos de los eventos a los que asistas! Compártenos tu experiencia, sé la inspiración de los demás 😉"
       gradient="from-cyan-900 via-60% via-sky-600 to-indigo-600"
       className="sm:col-span-2 shadow-lg"
     />
