@@ -75,7 +75,7 @@ const FormularioRegistro: React.FC = () => {
 
   return (
     <form className="space-y-6 text-stone-700" onSubmit={handleSubmit(onSubmit)}>
-      <div className="rounded-md shadow-sm -space-y-px">
+      <div className="rounded-md shadow-sm -space-y-px w-72 md:96">
         {/* Campo Nombre */}
         <div>
           <label htmlFor="name" className="sr-only">Nombre completo</label>
@@ -86,7 +86,7 @@ const FormularioRegistro: React.FC = () => {
             className={`appearance-none rounded-t-md block w-full px-3 py-2 border ${errors.name ? 'border-red-500' : 'border-stone-400'} placeholder-stone-500 text-gray-900`}
             placeholder="Nombre completo"
           />
-          {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
+          {errors.name && <p className="text-white text-xs mt-1">{errors.name.message}</p>}
         </div>
 
         {/* Campo Correo */}
@@ -105,7 +105,7 @@ const FormularioRegistro: React.FC = () => {
             className={`appearance-none block w-full px-3 py-2 border ${errors.email ? 'border-red-500' : 'border-stone-400'} placeholder-stone-500 text-gray-900`}
             placeholder="Correo electrónico"
           />
-          {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
+          {errors.email && <p className="text-white text-xs mt-1">{errors.email.message}</p>}
         </div>
 
         {/* Campo Teléfono */}
@@ -124,7 +124,7 @@ const FormularioRegistro: React.FC = () => {
             className={`appearance-none block w-full px-3 py-2 border ${errors.phone ? 'border-red-500' : 'border-stone-400'} placeholder-stone-500 text-gray-900`}
             placeholder="Número de teléfono"
           />
-          {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone.message}</p>}
+          {errors.phone && <p className="text-white text-xs mt-1">{errors.phone.message}</p>}
         </div>
 
         {/* Campo Contraseña */}
@@ -143,7 +143,7 @@ const FormularioRegistro: React.FC = () => {
             className={`appearance-none block w-full px-3 py-2 border ${errors.password ? 'border-red-500' : 'border-stone-400'} placeholder-stone-500 text-gray-900`}
             placeholder="Contraseña"
           />
-          {errors.password && <p className="text-red-500 text-xs mt-1">{errors.password.message}</p>}
+          {errors.password && <p className="text-white text-xs mt-1">{errors.password.message}</p>}
         </div>
 
         {/* Campo Confirmar Contraseña */}
@@ -159,14 +159,14 @@ const FormularioRegistro: React.FC = () => {
             className={`appearance-none block w-full px-3 py-2 border ${errors.confirmPassword ? 'border-red-500' : 'border-stone-400'} placeholder-stone-500 text-gray-900`}
             placeholder="Repite la contraseña"
           />
-          {errors.confirmPassword && <p className="text-red-500 text-xs mt-1">{errors.confirmPassword.message}</p>}
+          {errors.confirmPassword && <p className="text-white text-xs mt-1">{errors.confirmPassword.message}</p>}
         </div>
       </div>
 
       <div>
         <button
           type="submit"
-          className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-cyan-700 hover:bg-cyan-800"
+          className="group relative w-full flex justify-center py-2 px-4 border border-white text-sm font-medium rounded-md text-white bg-cyan-700 hover:bg-cyan-800"
           disabled={loading}
         >
           {loading ? 'Registrando...' : 'Registrarse'}

@@ -1,5 +1,4 @@
 // src/app/dashboard.tsx
-
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -96,7 +95,7 @@ const Dashboard = () => {
   if (loading) return <div>Cargando...</div>;
 
   return (
-    <div className="flex min-h-screen bg-violet-100 rounded-lg">
+    <div className="flex min-h-screen rounded-lg">
       <main className="flex-1 p-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           {stats.map((stat, index) => (

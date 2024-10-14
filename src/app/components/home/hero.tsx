@@ -27,7 +27,7 @@ const HeroSection: React.FC = () => {
       />
 
       {/* Contenido del héroe */}
-      <div className="relative z-1 text-center px-6 py-20" data-aos="fade-up">
+      <div className="relative z-1 text-center my-10 m-1 py-16 lg:px-32 rounded-xl bg-black/10 backdrop-blur-lg" data-aos="fade-up">
         <h1 className="text-6xl font-extrabold text-white drop-shadow-lg">
           Ama Ser el Cambio A.C.
         </h1>
