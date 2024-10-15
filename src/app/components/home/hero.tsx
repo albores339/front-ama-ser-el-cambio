@@ -13,7 +13,7 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <header className="relative w-full h-full bg-gradient-to-b from-cyan-500 to-blue-800 text-white flex flex-col justify-center items-center">
+    <header className="relative w-full h-full bg-gradient-to-b from-cyan-500 to-blue-800 text-white flex flex-col justify-center items-center rounded-lg">
       {/* Imagen de fondo */}
       <Image
         src="/images/hero.webp"
@@ -23,11 +23,11 @@ const HeroSection: React.FC = () => {
         sizes="100vw"
         priority
         decoding="async"
-        className="object-cover w-full h-full absolute top-0 left-0 z-0 brightness-75"
+        className="object-cover w-full h-full absolute top-0 left-0 z-0 brightness-75 rounded-lg"
       />
 
       {/* Contenido del héroe */}
-      <div className="relative z-1 text-center my-14 py-10 shadow-2xl lg:px-32 rounded-xl bg-black/30 backdrop-blur-3xl border boder-2 border-lime-700" data-aos="fade-up">
+      <div className="relative z-1 text-center md:my-14 py-10 md:shadow-2xl lg:px-32 rounded-xl bg-black/30 backdrop-blur-3xl border boder-2 border-lime-700 p-2" data-aos="fade-up">
         <h1 className="text-6xl font-extrabold text-white drop-shadow-lg">
           Ama Ser el Cambio A.C.
         </h1>
