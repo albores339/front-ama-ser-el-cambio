@@ -24,7 +24,7 @@ const FantasticPhotoCardsSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative py-16 text-stone-600 max-w-screen-xl mx-auto px-4 overflow-hidden">
+    <section className="relative py-10 md:py-16 text-stone-600 max-w-screen-xl mx-auto px-4 overflow-hidden">
       {/* DotPattern positioned absolutely as background */}
       <DotPattern
         className="absolute inset-0 w-full h-full z-0 opacity-30"
@@ -46,7 +46,7 @@ const FantasticPhotoCardsSection: React.FC = () => {
                 size={400} // Tamaño del beam
                 duration={7} // Duración de la animación
                 anchor={50} // Punto de anclaje
-                borderWidth={1} // Ancho del beam
+                borderWidth={2} // Ancho del beam
                 colorFrom="#06B6D4" // Color inicial
                 colorTo="#F43F5E" // Color final
                 delay={0} // Retraso antes de iniciar la animación
