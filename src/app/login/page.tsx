@@ -16,10 +16,10 @@ export const metadata: Metadata = {
 const Login: React.FC = () => {
   return (
     <main className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 text-stone-700 md:bg-violet-50">
-      <div id='aqui' className="flex items-center w-full space-y-0 md:space-y-0 flex-col md:flex-row max-w-screen-lg shadow-2xl rounded-xl lg:pr-4 bg-white my-4 mb-8 py-4">
+      <div id='aqui' className="flex items-center w-full space-y-0 md:space-y-0 flex-col md:flex-row max-w-screen-lg shadow-2xl rounded-lg lg:pr-4 bg-white my-4 mb-8 py-4">
         {/* Contenedor de la Imagen */}
         <ShineBorder
-          className='flex-shrink-0 w-full md:w-1/2 p-4 flex flex-col text-center text-cyan-700 justify-center lg:py-8 rounded-lg m-4 shadow-md' // Redondeado solo a la izquierda
+          className='flex-shrink-0 w-full md:w-1/2 p-4 flex flex-col text-center text-cyan-700 justify-center lg:py-8 rounded-lg m-4 shadow-xl' // Redondeado solo a la izquierda
           color={["#06B6D4", "#8B5CF6", "#FB7185"]} // Colores para el efecto shine
         >
           <Link href="/">
@@ -38,7 +38,7 @@ const Login: React.FC = () => {
         </ShineBorder>
         
         {/* Contenedor del Formulario */}
-        <div className='bg-cyan-700 rounded-xl py-14 w-full md:w-1/2 flex flex-col items-center'> 
+        <div className='bg-cyan-700 rounded-xl py-14 w-full md:w-1/2 flex flex-col items-center shadow-lg'> 
           <Link href="/" className="flex flex-row">
               <ArrowLongLeftIcon className='w-10 h-10 text-white'/> <HomeModernIcon className='w-10 h-10 text-white'/>
           </Link>
