@@ -2,12 +2,11 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import AnimatedGradientText from '../animata/animated-gradient-text';// Asegúrate de que la ruta sea correcta
-import { UserGroupIcon, UserPlusIcon } from '@heroicons/react/24/solid';
+import { UserGroupIcon, UserPlusIcon, CalendarIcon } from '@heroicons/react/24/solid';
 
 const AfiliadoCounter: React.FC = () => {
   const [counter, setCounter] = useState(0);
-  const targetNumber = 1359; // Número objetivo
+  const targetNumber = 1359; // Número objetivo para afiliados
   const duration = 3000; // Duración de la animación en milisegundos
   const [isVisible, setIsVisible] = useState(false);
 
@@ -44,20 +43,29 @@ const AfiliadoCounter: React.FC = () => {
   return (
     <div
       id="afiliado-counter"
-      className="flex flex-col md:flex-row justify-center items-center p-4 mx-auto text-5xl font-bold mb-16 gap-20"
+      className="flex flex-col md:flex-row justify-center items-center p-4 mx-auto text-4xl font-semibold mb-20 gap-10"
     >
-        <div className='flex flex-row items-center'>
-            <UserGroupIcon className='text-cyan-600 h-24 w-24 mx-2'/>
-            <AnimatedGradientText className='flex flex-col text-center'>
-            <p className='text-8xl'>{Math.floor(counter)}</p> <p>Afiliados</p>
-            </AnimatedGradientText>
+      <div className='flex flex-row items-center'>
+        <UserGroupIcon className='text-cyan-700 h-24 w-24 mx-2'/>
+        <div className='flex flex-col text-center text-cyan-700'>
+          <p className='text-6xl'>{Math.floor(counter)}</p> {/* Contador animado para afiliados */}
+          <p>Afiliados</p>
         </div>
-        <div className='flex flex-row items-center'>
-            <UserPlusIcon className='text-cyan-600 h-24 w-24 mx-2'/>
-            <AnimatedGradientText className='flex flex-col text-center'>
-            <p className='text-8xl'>8</p> <p>Años</p>
-            </AnimatedGradientText>
+      </div>
+      <div className='flex flex-row items-center'>
+        <UserPlusIcon className='text-cyan-700 h-24 w-24 mx-2'/>
+        <div className='flex flex-col text-center text-cyan-700'>
+          <p className='text-6xl'>8</p> {/* Fijo para años */}
+          <p>Años</p>
         </div>
+      </div>
+      <div className='flex flex-row items-center'>
+        <CalendarIcon className='text-cyan-700 h-24 w-24 mx-2'/>
+        <div className='flex flex-col text-center text-cyan-700'>
+          <p className='text-6xl'>288</p> {/* Fijo para eventos */}
+          <p>Eventos</p>
+        </div>
+      </div>
     </div>
   );
 };
