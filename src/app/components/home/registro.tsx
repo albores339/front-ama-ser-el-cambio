@@ -49,10 +49,10 @@ const AfiliadoSection: React.FC = () => {
               ? "Únete a nuestra comunidad y forma parte de quienes están haciendo el cambio. Regístrate ahora y empieza a colaborar con nosotros."
               : "Haz un cambio en el mundo donando a quienes más lo necesitan. Tu ayuda puede transformar vidas y crear un futuro mejor."}
           </p>
-          <div className="mb-6 w-full h-1 bg-stone-200 rounded-full">
+          <div className="mb-6 w-full h-0.5 bg-stone-200 rounded-full">
             <div
               style={{ width: `${(timer / 10) * 100}%` }}
-              className={`h-1 ${
+              className={`h-0.5 ${
                 isAfiliado ? 'bg-cyan-500' : 'bg-pink-500'
               } rounded-full transition-all duration-1000`}
               aria-hidden="true"
@@ -76,7 +76,7 @@ const AfiliadoSection: React.FC = () => {
             height={400}
             priority
             sizes="(max-width: 400px) 100vw, 400px"
-            className={`rounded-lg shadow-2xl border-4 ${
+            className={`rounded-lg shadow-xl border-2 ${
               isAfiliado ? 'border-cyan-500' : 'border-pink-500'
             } transition-transform duration-700 ${isAfiliado ? 'scale-100' : 'scale-105'}`}
           />
