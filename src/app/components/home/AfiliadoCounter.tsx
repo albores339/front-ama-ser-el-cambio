@@ -43,7 +43,7 @@ const AfiliadoCounter: React.FC = () => {
   return (
     <div
       id="afiliado-counter"
-      className="flex flex-col md:flex-row justify-center items-center p-4 mx-auto text-4xl font-semibold mb-20 gap-10"
+      className="flex flex-col md:flex-row justify-center items-center p-4 mx-auto text-2xl md:text-4xl font-semibold mb-10 md:mb-20 gap-10"
     >
       <div className='flex flex-row items-center'>
         <UserGroupIcon className='text-cyan-700 h-24 w-24 mx-2'/>

@@ -11,7 +11,7 @@ const Map: React.FC = () => {
   }, []);
 
   return (
-    <section className="my-8">
+    <section className="my-10">
       <h2 className="text-3xl font-bold text-cyan-700 text-center mb-8">Nuestra Ubicación</h2>
       {isMapVisible && (
         <div className="w-full h-96 mx-auto max-w-screen-xl">

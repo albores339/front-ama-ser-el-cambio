@@ -31,7 +31,7 @@ const AfiliadoSection: React.FC = () => {
   };
 
   return (
-    <section className="py-12 px-6 bg-violet-50 rounded-xl shadow-lg mx-auto">
+    <section className="py-6 md:py-12 px-6 bg-violet-50 rounded-xl shadow-lg mx-auto">
       <div className="flex flex-col lg:flex-row items-center justify-center lg:space-x-12 max-w-screen-lg mx-auto">
         <div className="text-center lg:text-left lg:w-3/5 mx-auto items-center justify-center">
         <p
@@ -41,10 +41,10 @@ const AfiliadoSection: React.FC = () => {
             >
               {isAfiliado ? '01' : '02'}
             </p>
-          <h2 className="text-4xl font-bold my-6 text-cyan-700">
+          <h2 className="text-4xl font-bold my-2 md:my-6 text-cyan-700">
             {isAfiliado ? "Regístrate como Afiliado" : "Regístrate como Donatario"}
           </h2>
-          <p className="text-lg leading-relaxed text-stone-700 mb-8">
+          <p className="text-lg leading-relaxed text-stone-700 my-4 md:mb-8">
             {isAfiliado
               ? "Únete a nuestra comunidad y forma parte de quienes están haciendo el cambio. Regístrate ahora y empieza a colaborar con nosotros."
               : "Haz un cambio en el mundo donando a quienes más lo necesitan. Tu ayuda puede transformar vidas y crear un futuro mejor."}
