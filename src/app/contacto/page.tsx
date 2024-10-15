@@ -15,7 +15,7 @@ const ContactPage: React.FC = () => (
       />
     </Head>
 
-    <main className="py-4 px-6 max-w-7xl mx-auto">
+    <main className="mx-auto">
       <Contactanos />
       <SocialMediaLinks />
       <Map />

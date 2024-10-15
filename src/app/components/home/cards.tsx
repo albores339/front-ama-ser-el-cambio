@@ -43,10 +43,10 @@ const FantasticPhotoCardsSection: React.FC = () => {
               {/* BorderBeam positioned absolutely to be behind the Image with additional props */}
               <BorderBeam
                 className="absolute inset-0 w-full h-full z-10 rounded-full"
-                size={500} // Tamaño del beam
+                size={400} // Tamaño del beam
                 duration={7} // Duración de la animación
                 anchor={50} // Punto de anclaje
-                borderWidth={1.5} // Ancho del beam
+                borderWidth={1} // Ancho del beam
                 colorFrom="#06B6D4" // Color inicial
                 colorTo="#F43F5E" // Color final
                 delay={0} // Retraso antes de iniciar la animación
@@ -62,7 +62,7 @@ const FantasticPhotoCardsSection: React.FC = () => {
                 />
               </div>
             </div>
-            <div className="text-center mt-4">
+            <div className="text-center mt-2">
               <h3 className="text-2xl font-bold text-cyan-700">{card.title}</h3>
               <p className="text-lg">{card.description}</p>
             </div>
