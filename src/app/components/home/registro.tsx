@@ -31,7 +31,7 @@ const AfiliadoSection: React.FC = () => {
   };
 
   return (
-    <section className="py-6 md:py-12 px-6 bg-violet-50 rounded-xl shadow-lg mx-auto">
+    <section className="py-6 md:py-12 px-10 bg-violet-50 rounded-xl shadow-lg mx-auto">
       <div className="flex flex-col lg:flex-row items-center justify-center lg:space-x-12 max-w-screen-lg mx-auto">
         <div className="text-center lg:text-left lg:w-3/5 mx-auto items-center justify-center">
         <p
