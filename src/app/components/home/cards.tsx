@@ -24,7 +24,7 @@ const FantasticPhotoCardsSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative py-10 md:py-16 text-stone-600 max-w-screen-xl mx-auto px-4 overflow-hidden">
+    <section className="relative pt-16 text-stone-600 max-w-screen-xl mx-auto px-4 overflow-hidden">
       {/* DotPattern positioned absolutely as background */}
       <DotPattern
         className="absolute inset-0 w-full h-full z-0 opacity-30"
@@ -36,10 +36,10 @@ const FantasticPhotoCardsSection: React.FC = () => {
         <p className="text-lg">Descubre las acciones que estamos tomando para cambiar el mundo</p>
       </div>
 
-      <div className="relative flex flex-col gap-4 lg:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8 items-center z-1">
+      <div className="relative flex flex-col lg:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8 items-center z-1">
         {cards.map((card, index) => (
           <div key={index} className="relative flex flex-col items-center">
-            <div className="relative w-80 h-80 shadow-xl rounded-full overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:-translate-y-2">
+            <div className="relative w-80 h-80 md:w-72 md:h-72 shadow-xl rounded-full overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:-translate-y-2 my-4">
               {/* BorderBeam positioned absolutely to be behind the Image with additional props */}
               <BorderBeam
                 className="absolute inset-0 w-full h-full z-10 rounded-full"
