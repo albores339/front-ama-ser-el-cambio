@@ -43,23 +43,23 @@ const AfiliadoCounter: React.FC = () => {
   return (
     <div
       id="afiliado-counter"
-      className="flex flex-col md:flex-row justify-center items-center p-4 mx-auto text-2xl md:text-4xl font-semibold mb-10 md:mb-20 gap-10"
+      className="flex flex-col md:flex-row justify-center items-center p-4 mx-auto text-4xl font-semibold mb-10 md:mb-20 gap-10"
     >
-      <div className='flex flex-row items-center'>
+      <div className='flex flex-row items-center justify-around gap-6'>
         <UserGroupIcon className='text-cyan-700 h-24 w-24 mx-2'/>
         <div className='flex flex-col text-center text-cyan-700'>
           <p className='text-6xl'>{Math.floor(counter)}</p> {/* Contador animado para afiliados */}
           <p>Afiliados</p>
         </div>
       </div>
-      <div className='flex flex-row items-center'>
+      <div className='flex flex-row items-center gap-6 justify-around'>
         <UserPlusIcon className='text-cyan-700 h-24 w-24 mx-2'/>
         <div className='flex flex-col text-center text-cyan-700'>
           <p className='text-6xl'>8</p> {/* Fijo para años */}
           <p>Años</p>
         </div>
       </div>
-      <div className='flex flex-row items-center'>
+      <div className='flex flex-row items-center gap-6 justify-around'>
         <CalendarIcon className='text-cyan-700 h-24 w-24 mx-2'/>
         <div className='flex flex-col text-center text-cyan-700'>
           <p className='text-6xl'>288</p> {/* Fijo para eventos */}

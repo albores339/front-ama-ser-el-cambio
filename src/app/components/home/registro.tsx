@@ -63,7 +63,7 @@ const AfiliadoSection: React.FC = () => {
           </Link>
           <button
             onClick={toggleAfiliado}
-            className="mt-4 mx-4 text-xl text-cyan-700 hover:text-2xl"
+            className="mx-4 my-2 md:m-4 text-xl text-cyan-700 hover:text-2xl"
           >
             {isAfiliado ? "Donatario" : "Afiliado"}
           </button>

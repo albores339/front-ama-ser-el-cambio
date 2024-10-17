@@ -39,12 +39,12 @@ const FantasticPhotoCardsSection: React.FC = () => {
       <div className="relative flex flex-col gap-4 lg:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8 items-center z-1">
         {cards.map((card, index) => (
           <div key={index} className="relative flex flex-col items-center">
-            <div className="relative w-80 h-80 shadow-xl rounded-full">
+            <div className="relative w-80 h-80 shadow-xl rounded-full overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:-translate-y-2">
               {/* BorderBeam positioned absolutely to be behind the Image with additional props */}
               <BorderBeam
                 className="absolute inset-0 w-full h-full z-10 rounded-full"
-                size={400} // Tamaño del beam
-                duration={7} // Duración de la animación
+                size={300} // Tamaño del beam
+                duration={4} // Duración de la animación
                 anchor={50} // Punto de anclaje
                 borderWidth={2} // Ancho del beam
                 colorFrom="#06B6D4" // Color inicial
@@ -58,7 +58,7 @@ const FantasticPhotoCardsSection: React.FC = () => {
                   src={card.imageUrl}
                   alt={card.title}
                   fill
-                  className="rounded-full object-cover border"
+                  className="rounded-full object-cover border border-stone-400"
                 />
               </div>
             </div>
