@@ -31,13 +31,16 @@ function BentoCard({
   className?: string;
   href: string; // Definimos el href como string
 }) {
+
+  const titleString = title ? title.toString() : 'Sin título';
+
   return (
     <MovingGradient
       animated={true}
       className={cn("relative rounded-md", className)} // Agregamos relative
       gradientClassName={cn("opacity-10", gradient)}
     >
-      <Link href={href} className="absolute inset-0 z-10" aria-label={title.toString()} /> 
+      <Link href={href} className="absolute inset-0 z-10" aria-label={titleString} /> 
 
       <section className="flex h-full flex-col gap-2 p-4">
         <header>

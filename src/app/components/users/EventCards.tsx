@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import Image from 'next/image';
 
 interface CardProps {
   title: string;
@@ -12,7 +13,7 @@ interface CardProps {
 const Card: FC<CardProps> = ({ title, description, tags, date, image, status }) => {
   return (
     <div className="relative w-full h-[500px] overflow-hidden rounded-lg shadow-lg transition-shadow hover:shadow-2xl">
-      <img
+      <Image
         src={image}
         alt={title}
         className="absolute inset-0 w-full h-full object-cover object-center"

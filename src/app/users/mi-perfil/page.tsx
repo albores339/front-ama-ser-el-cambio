@@ -1,7 +1,7 @@
 "use client";
 
 import { useAuth } from "@/app/context/AuthContext"; // Asegúrate de que el contexto esté disponible
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { LockClosedIcon, InboxIcon, PhoneIcon, UserIcon } from "@heroicons/react/24/solid";
 import Swal from 'sweetalert2'; // Importa SweetAlert2
@@ -73,14 +73,14 @@ const EditProfile = () => {
         showConfirmButton: false,
       });
     } catch (error) {
-      // Muestra la alerta de error
-      Swal.fire({
-        title: 'Error al actualizar el perfil',
-        text: error.message,
-        icon: 'error',
-        timer: 2000,
-        showConfirmButton: false,
-      });
+        const errorMessage = (error instanceof Error) ? error.message : "Ocurrió un error inesperado.";
+        Swal.fire({
+          title: 'Error al actualizar el perfil',
+          text: errorMessage,
+          icon: 'error',
+          timer: 2000,
+          showConfirmButton: false,
+        });
     }
   };
 
