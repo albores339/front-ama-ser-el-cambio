@@ -16,14 +16,6 @@ const NavbarUser: React.FC<NavbarUserProps> = ({ isOpen, toggleMenu }) => (
         <MenuButton isOpen={isOpen} toggleMenu={toggleMenu} />
         <Logo />
       </div>
-      <div className="space-x-4">
-        <a
-          href="/perfil"
-          className="bg-lime-700 font-bold text-white px-5 py-2 rounded-2xl hover:bg-lime-600 transition-all duration-300"
-        >
-          Perfil
-        </a>
-      </div>
     </div>
 
     {isOpen && (

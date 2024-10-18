@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 const Login: React.FC = () => {
   return (
-    <main className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 text-stone-700 md:bg-violet-50">
+    <main className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 text-stone-700 md:bg-stone-50">
       <div id='aqui' className="flex items-center w-full space-y-0 md:space-y-0 flex-col md:flex-row max-w-screen-lg shadow-2xl rounded-lg lg:pr-4 bg-white my-4 mb-8 py-4">
         {/* Contenedor de la Imagen */}
         <ShineBorder

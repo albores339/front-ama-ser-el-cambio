@@ -55,7 +55,7 @@ const LoginForm: React.FC = () => {
         }).then(() => {
           // Redirigir según el rol del usuario
           if (role === 'admin' || role === 'user' || role === 'donador') {
-            router.push('/user');
+            router.push('/users');
           } else {
             // Aquí puedes especificar una ruta alternativa para otros roles en el futuro
             router.push('/'); // Redirige a la página principal u otra según lo necesario

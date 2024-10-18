@@ -31,11 +31,11 @@ const AfiliadoSection: React.FC = () => {
   };
 
   return (
-    <section className="py-6 md:py-12 px-10 bg-violet-50 rounded-xl shadow-lg mx-auto">
+    <section className="py-6 md:py-12 px-10 bg-stone-50 rounded-xl shadow-lg mx-auto">
       <div className="flex flex-col lg:flex-row items-center justify-center lg:space-x-12 max-w-screen-lg mx-auto">
         <div className="text-center lg:text-left lg:w-3/5 mx-auto items-center justify-center">
         <p
-              className={`text-stone-600 font-bold text-6xl underline ${
+              className={`text-stone-600 font-bold text-5xl md:text-6xl underline ${
                 isAfiliado ? 'decoration-cyan-500' : 'decoration-pink-500'
               } transition-transform duration-700`}
             >

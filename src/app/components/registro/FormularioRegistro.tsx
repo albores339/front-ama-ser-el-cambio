@@ -51,7 +51,7 @@ const FormularioRegistro: React.FC = () => {
           confirmButtonText: 'Aceptar',
         }).then(() => {
           // Redirigir a la página principal o al dashboard
-          router.push('/');
+          router.push('/users');
         });
       } else {
         Swal.fire({

@@ -12,6 +12,7 @@ import {
 
 import MovingGradient from "../components/animata/background/moving-gradient";
 import { cn } from "../lib/utils";
+import Link from "next/link"; // Asegúrate de importar Link
 
 function BentoCard({
   title,
@@ -20,6 +21,7 @@ function BentoCard({
   children,
   gradient,
   className,
+  href, // Agregamos el href como propiedad
 }: {
   children?: ReactNode;
   title: ReactNode;
@@ -27,13 +29,19 @@ function BentoCard({
   gradient?: string;
   description: ReactNode;
   className?: string;
+  href: string; // Definimos el href como string
 }) {
+
+  const titleString = title ? title.toString() : 'Sin título';
+
   return (
     <MovingGradient
-      animated={false}
-      className={cn("rounded-md", className)}
+      animated={true}
+      className={cn("relative rounded-md", className)} // Agregamos relative
       gradientClassName={cn("opacity-10", gradient)}
     >
+      <Link href={href} className="absolute inset-0 z-10" aria-label={titleString} /> 
+
       <section className="flex h-full flex-col gap-2 p-4">
         <header>
           <div className="mb-2 flex items-center gap-2">
@@ -53,11 +61,16 @@ function GetGradient() {
     <BentoCard
       title="Próximos Eventos"
       icon={<Calendar size={24} />}
-      description={<span>Da click aquí y entérate qué estamos haciendo, únete, recuerda que unidos hacemos la fuerza.</span>}
+      description={
+        <span>
+          Da click aquí y entérate qué estamos haciendo, únete, recuerda que unidos hacemos la fuerza.
+        </span>
+      }
       className="sm:col-span-1 sm:row-span-2 shadow-lg"
       gradient="from-cyan-900 via-60% via-sky-600 to-indigo-600"
+      href="/users/eventos" // Pasamos el link correspondiente
     >
-      <div className="group relative flex cursor-pointer flex-col justify-end rounded-md bg-zinc-900 p-2 text-2xl tracking-tight text-white md:text-4xl">
+      <div className="group relative flex cursor-pointer flex-col justify-end rounded-md bg-cyan-700 p-2 text-2xl tracking-tight text-white md:text-4xl">
         <div className="font-light">Ver</div>
         <div className="-mt-2 font-bold">Próximos Eventos</div>
         <div className="flex h-6 w-6 items-center justify-center rounded-full border bg-white transition-all duration-700 group-hover:rotate-[360deg] md:h-8 md:w-8">
@@ -77,6 +90,7 @@ function LinearGradient() {
       description="Este será el medio de comunicación entre los administradores de la web y la comunidad."
       gradient="from-red-300 via-60% via-rose-300 to-red-200"
       className="group sm:col-span-1 shadow-lg"
+      href="/users/avisos" // Pasamos el link correspondiente
     >
       <div className="h-4 w-full rounded-sm bg-gray-100 group-hover:animate-pulse group-hover:bg-stone-300" />
       <div className="h-4 w-1/2 rounded-sm bg-gray-100 group-hover:animate-pulse group-hover:bg-stone-300" />
@@ -92,6 +106,7 @@ function RadialGradient() {
       description="Descríbenos más de ti."
       gradient="from-lime-300 via-60% via-green-200 to-lime-200"
       className="group sm:col-span-1 shadow-lg"
+      href="/users/mi-perfil" // Pasamos el link correspondiente
     >
       <div className="flex w-full flex-row justify-end gap-2 rounded border-yellow-200 bg-yellow-100 p-2">
         <HeartPulse
@@ -119,6 +134,7 @@ function ConicGradient() {
       description="¡Crea un post con tus fotos de los eventos a los que asistas! Compártenos tu experiencia, sé la inspiración de los demás 😉"
       gradient="from-cyan-900 via-60% via-sky-600 to-indigo-600"
       className="sm:col-span-2 shadow-lg"
+      href="/users/comunidad" // Pasamos el link correspondiente
     />
   );
 }
