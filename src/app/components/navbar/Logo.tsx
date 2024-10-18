@@ -9,17 +9,17 @@ const Logo: React.FC = () => (
       <Image
         src="/images/favicon.gif"
         alt="Logo favicon AMA"
-        width={48}
-        height={48}
-        className="h-12 w-auto"
+        width={736}
+        height={736}
+        className="h-11 w-auto"
         loading="lazy"
       />
       <Image
         src="/images/logotipo.gif"
         alt="Logotipo AMA"
-        width={150}
-        height={50}
-        className="h-12 w-auto hidden md:block"
+        width={864}
+        height={422}
+        className="h-11 w-auto hidden md:block"
         loading="lazy"
       />
     </div>
