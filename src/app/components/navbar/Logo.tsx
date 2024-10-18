@@ -11,7 +11,7 @@ const Logo: React.FC = () => (
         alt="Logo favicon AMA"
         width={48}
         height={48}
-        className="h-11 w-auto"
+        className="h-12 w-auto"
         loading="lazy"
       />
       <Image
@@ -19,7 +19,7 @@ const Logo: React.FC = () => (
         alt="Logotipo AMA"
         width={150}
         height={50}
-        className="h-11 w-auto hidden md:block"
+        className="h-12 w-auto hidden md:block"
         loading="lazy"
       />
     </div>
