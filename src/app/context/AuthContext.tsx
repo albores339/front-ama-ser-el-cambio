@@ -1,5 +1,3 @@
-"use client";
-
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 interface AuthContextType {
@@ -39,7 +37,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     }
   }, []);
 
-  // Update isAdmin and isUser whenever the role changes
   useEffect(() => {
     setIsAdmin(role === "admin");
     setIsUser(role === "user");
