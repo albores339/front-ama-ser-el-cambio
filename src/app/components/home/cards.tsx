@@ -24,7 +24,7 @@ const FantasticPhotoCardsSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative pt-16 text-stone-600 max-w-screen-xl mx-auto px-4 overflow-hidden">
+    <section className="relative pt-10 text-stone-600 max-w-screen-xl mx-auto px-4 overflow-hidden">
       {/* DotPattern positioned absolutely as background */}
       <DotPattern
         className="absolute inset-0 w-full h-full z-0 opacity-30"
