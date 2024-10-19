@@ -29,8 +29,9 @@ export default function Home() {
   const sortedArticles = articles.sort(compareDates); // Ordenamos los artículos por fecha
   
   return (
-    <div className="max-w-screen-lg mx-auto p-4 text-stone-600">
-      <h1 className="text-4xl font-bold my-8 text-cyan-700">Eventos benéficos</h1>
+    <div className="mx-auto p-4 text-stone-600 mb-8">
+      <div className="max-w-screen-lg mx-auto">
+      <h1 className="text-4xl font-bold my-6 text-cyan-700">Eventos benéficos</h1>
       <div className="grid grid-cols-1 gap-6">
         {sortedArticles.map((article, index) => (
           <Card
@@ -43,6 +44,7 @@ export default function Home() {
             status={article.status}
           />
         ))}
+      </div>
       </div>
     </div>
   );

@@ -1,16 +1,14 @@
-// components/UserMenu.tsx
 import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import Swal from "sweetalert2";
 import {
   HomeIcon,
   HeartIcon,
-  ChatBubbleBottomCenterTextIcon,
-  UsersIcon,
   PencilSquareIcon,
   ArrowRightEndOnRectangleIcon,
 } from "@heroicons/react/24/solid";
 import { useAuth } from "@/app/context/AuthContext";
+import { useRouter } from "next/navigation";
 
 interface UserMenuProps {
   closeMenu: () => void;
@@ -18,10 +16,12 @@ interface UserMenuProps {
 
 const UserMenu: React.FC<UserMenuProps> = ({ closeMenu }) => {
   const { logout } = useAuth();
+  const router = useRouter();
   const menuRef = useRef<HTMLUListElement>(null);
 
   const handleLogout = () => {
     logout();
+    closeMenu();
     Swal.fire({
       title: 'Sesión cerrada',
       text: 'Has cerrado sesión exitosamente.',
@@ -30,6 +30,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ closeMenu }) => {
       timerProgressBar: true,
       showConfirmButton: false,
     });
+    router.push("/")
   };
 
   useEffect(() => {
@@ -47,33 +48,29 @@ const UserMenu: React.FC<UserMenuProps> = ({ closeMenu }) => {
 
   return (
     <ul ref={menuRef} className="flex flex-col font-semibold mt-4 rounded-lg text-stone-700 mx-8 py-10 text-xl">
+      {/* Acceso al Home */}
       <li>
         <Link
-          href="/perfil"
+          href="/"
           onClick={closeMenu}
           className="flex items-center py-2 px-3 rounded hover:bg-cyan-700 hover:text-white"
         >
-          <PencilSquareIcon className="w-5 h-5 mr-2 text-cyan-600" /> Mi Perfil
+          <HomeIcon className="w-5 h-5 mr-2 text-cyan-600" /> Inicio
         </Link>
       </li>
+      
+      {/* Menú de Afiliado */}
       <li>
         <Link
-          href="/about"
+          href="/users"
           onClick={closeMenu}
           className="flex items-center py-2 px-3 rounded hover:bg-cyan-700 hover:text-white"
         >
-          <HomeIcon className="w-5 h-5 mr-2 text-cyan-600" /> Quiénes Somos
+          <PencilSquareIcon className="w-5 h-5 mr-2 text-cyan-600" /> Menú de afiliado
         </Link>
       </li>
-      <li>
-        <Link
-          href="/iniciativas"
-          onClick={closeMenu}
-          className="flex items-center py-2 px-3 rounded hover:bg-cyan-700 hover:text-white"
-        >
-          <UsersIcon className="w-5 h-5 mr-2 text-cyan-600" /> Nuestras Iniciativas
-        </Link>
-      </li>
+
+      {/* Donaciones */}
       <li>
         <Link
           href="/donar"
@@ -83,15 +80,8 @@ const UserMenu: React.FC<UserMenuProps> = ({ closeMenu }) => {
           <HeartIcon className="w-5 h-5 mr-2 text-red-600" /> Donaciones
         </Link>
       </li>
-      <li>
-        <Link
-          href="/contacto"
-          onClick={closeMenu}
-          className="flex items-center py-2 px-3 rounded hover:bg-cyan-700 hover:text-white"
-        >
-          <ChatBubbleBottomCenterTextIcon className="w-5 h-5 mr-2 text-cyan-600" /> Contacto
-        </Link>
-      </li>
+
+      {/* Cerrar Sesión */}
       <li>
         <button
           onClick={handleLogout}

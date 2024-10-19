@@ -10,6 +10,7 @@ import {
   MegaphoneIcon,
   ArrowRightEndOnRectangleIcon,
 } from "@heroicons/react/24/solid";
+import { useRouter } from "next/navigation";
 
 interface AdminMenuProps {
   closeMenu: () => void;
@@ -17,12 +18,15 @@ interface AdminMenuProps {
 
 const AdminMenu: React.FC<AdminMenuProps> = ({ closeMenu }) => {
   const { logout } = useAuth();
+  const router = useRouter();
   const menuRef = useRef<HTMLUListElement>(null);
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     logout();
     closeMenu();
-    Swal.fire({
+
+    // Mostrar la alerta antes de redirigir
+    await Swal.fire({
       title: 'Sesión cerrada',
       text: 'Has cerrado sesión exitosamente.',
       icon: 'success',
@@ -30,6 +34,9 @@ const AdminMenu: React.FC<AdminMenuProps> = ({ closeMenu }) => {
       timerProgressBar: true,
       showConfirmButton: false,
     });
+
+    // Redirigir después de que se cierre la sesión
+    router.push("/");
   };
 
   useEffect(() => {
@@ -39,9 +46,9 @@ const AdminMenu: React.FC<AdminMenuProps> = ({ closeMenu }) => {
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("click", handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, [closeMenu]);
 
