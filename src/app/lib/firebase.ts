@@ -1,6 +1,6 @@
 // lib/firebase.ts
 import { initializeApp } from "firebase/app";
-import { getMessaging } from "firebase/messaging";
+import { getMessaging, Messaging } from "firebase/messaging";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
@@ -16,7 +16,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 // Solo inicializa el Messaging en el lado del cliente
-let messaging;
+let messaging: Messaging | undefined; // Define el tipo explícitamente
 if (typeof window !== 'undefined') {
   messaging = getMessaging(app);
 }
