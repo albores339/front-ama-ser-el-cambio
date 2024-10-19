@@ -30,8 +30,8 @@ const requestPermission = async () => {
 const listenForMessages = () => {
   if (!messaging) return; // Asegúrate de que messaging esté definido
 
-  onMessage(messaging, (payload: any) => { // Cambiar a un tipo más específico si lo conoces
-    console.log("Mensaje recibido: ", payload);
+  onMessage(messaging, (payload: any) => { // eslint-disable-line
+    console.log("Mensaje recibido: ", payload); // eslint-disable-line
     // Aquí puedes manejar la notificación
     const notificationTitle = payload.notification.title;
     const notificationOptions = {
@@ -47,4 +47,4 @@ const initNotifications = async () => {
   listenForMessages();
 };
 
-export { initNotifications, requestPermission, listenForMessages };
+export { initNotifications, requestPermission, listenForMessages }; 
