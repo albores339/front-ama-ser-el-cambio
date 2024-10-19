@@ -16,6 +16,7 @@ const Card: FC<CardProps> = ({ title, description, tags, date, image, status }) 
       <Image
         src={image}
         alt={title}
+        fill
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
       <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-6 text-white">

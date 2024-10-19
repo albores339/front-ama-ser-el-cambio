@@ -1,4 +1,3 @@
-// components/GuestMenu.tsx
 import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import {
@@ -19,14 +18,15 @@ const GuestMenu: React.FC<GuestMenuProps> = ({ closeMenu }) => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
+      // Si el clic fue fuera del menú, cerrarlo
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
         closeMenu();
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("click", handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, [closeMenu]);
 

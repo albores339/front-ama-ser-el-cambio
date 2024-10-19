@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import { useRouter } from 'next/navigation';
+import { useAuth } from '@/app/context/AuthContext';
 
 type FormData = {
   name: string;
@@ -16,6 +17,7 @@ type FormData = {
 const FormularioRegistro: React.FC = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const { setToken, setRole } = useAuth();
 
   const {
     register,
@@ -42,6 +44,9 @@ const FormularioRegistro: React.FC = () => {
         // Guardar el token en el localStorage o en cookies
         localStorage.setItem('token', result.token); // Puedes usar cookies si prefieres
         localStorage.setItem('role', result.role); // Guarda el rol
+
+        setToken(result.token);
+        setRole(result.role);
 
         Swal.fire({
           title: 'Registro exitoso',

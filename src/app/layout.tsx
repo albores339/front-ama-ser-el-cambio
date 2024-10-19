@@ -1,4 +1,3 @@
-// src/app/layout.tsx
 "use client"; // Marcar el componente como Client Component
 
 import { Montserrat } from 'next/font/google';
@@ -29,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={montserrat.variable}
+        className={`${montserrat.variable} flex flex-col min-h-screen`} // Aplica flexbox para la estructura del layout
         style={{ backgroundColor: "white" }}
       >
         {GA_TRACKING_ID && (
@@ -46,12 +45,17 @@ export default function RootLayout({
           </>
         )}
         <AuthProvider>
-            {showLayout && <Navbar />}
-            <div className={showLayout ? "mt-20 mx-auto bg-white" : "mx-auto bg-white"}>
-              {children}
-            </div>
-            {showLayout && <WhatsappButton />}
-            {showLayout && <Footer />}
+          {/* Navbar visible si es requerido */}
+          {showLayout && <Navbar />}
+
+          {/* Contenedor principal que crece para ocupar el espacio disponible */}
+          <main className={`${showLayout ? "mt-16" : ""} flex-grow mx-auto w-full bg-white`}>
+            {children}
+          </main>
+
+          {/* Botón de WhatsApp y Footer visibles si es requerido */}
+          {showLayout && <WhatsappButton />}
+          {showLayout && <Footer />}
         </AuthProvider>
       </body>
     </html>
