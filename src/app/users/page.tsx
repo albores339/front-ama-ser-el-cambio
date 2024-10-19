@@ -15,17 +15,17 @@ import {
 import MovingGradient from "../components/animata/background/moving-gradient";
 import { cn } from "../lib/utils";
 import Link from "next/link"; // Asegúrate de importar Link
-import { requestPermission, listenForMessages } from "@/app/lib/NotificationService";
-import { useEffect } from "react";
+//import { requestPermission, listenForMessages } from "@/app/lib/NotificationService";
+//import { useEffect } from "react";
 
-function NotificationHandler() {
+{/*function NotificationHandler() {
   useEffect(() => {
     requestPermission();
     listenForMessages();
   }, []);
 
   return null; // Este componente no necesita renderizar nada
-}
+}*/}
 
 function BentoCard({
   title,
@@ -156,7 +156,7 @@ export default function Gradient() {
   return (
     <div className="max-w-screen-xl py-10 mx-auto px-2 md:px-8">
       <div className="grid grid-cols-1 gap-4 text-black sm:grid-cols-3 lg:grid-cols-3">
-        <NotificationHandler />
+        {/*<NotificationHandler />*/}
         <GetGradient />
         <LinearGradient />
         <RadialGradient />
