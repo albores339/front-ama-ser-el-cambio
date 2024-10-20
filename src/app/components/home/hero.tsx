@@ -27,11 +27,11 @@ const HeroSection: React.FC = () => {
       />
 
       {/* Contenido del héroe */}
-      <div className="relative z-1 text-center md:my-14 py-16 md:py-10 shadow-xl md:shadow-2xl lg:px-32 rounded-xl bg-black/20 md:backdrop-blur-3xl border boder-2 border-lime-700 p-2" data-aos="fade-up">
-        <h1 className="text-6xl font-extrabold text-white drop-shadow-lg">
+      <div className="relative z-1 text-center m-8 my-10 md:my-14 py-10 shadow-xl md:shadow-2xl lg:px-32 rounded-xl backdrop-blur-3xl border boder-2 border-lime-700 p-2" data-aos="fade-up">
+        <h1 className="text-3xl md:text-6xl font-extrabold text-white drop-shadow-lg">
           Ama Ser el Cambio A.C.
         </h1>
-        <p className="text-3xl m-4 text-lime-200 drop-shadow-lg">
+        <p className="text-xl md:text-3xl m-4 text-lime-200 drop-shadow-lg">
           {"Manos que Dan, Jamás Estarán Vacías."}
         </p>
         <p className="text-xl mb-12 text-white drop-shadow-lg">
