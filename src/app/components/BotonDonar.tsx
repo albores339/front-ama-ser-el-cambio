@@ -15,13 +15,13 @@ export default function GetStartedButton({
       <div className="flex items-center justify-center min-h-12 w-full animate-shake rounded-xl">
         <button
           className={cn(
-            "group flex h-12 w-56 items-center justify-center gap-3 rounded-2xl bg-white p-8 font-bold transition-colors duration-100 ease-in-out hover:bg-lime-700",
+            "group flex h-12 w-40 md:w-56 items-center justify-center gap-3 rounded-2xl bg-white p-4 md:p-8 font-bold transition-colors duration-100 ease-in-out hover:bg-lime-700",
             className,
           )}
         >
           <span
             className={cn(
-              "text-lime-700 transition-colors duration-100 ease-in-out group-hover:text-white text-4xl",
+              "text-lime-700 transition-colors duration-100 ease-in-out group-hover:text-white text-2xl md:text-4xl",
             )}
           >
             {text}

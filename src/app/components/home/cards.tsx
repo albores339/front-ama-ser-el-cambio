@@ -32,14 +32,14 @@ const FantasticPhotoCardsSection: React.FC = () => {
       />
       
       <div className="text-center m-4 relative z-10">
-        <h2 className="text-4xl font-bold mb-4 text-cyan-700">Nuestras Iniciativas</h2>
-        <p className="text-lg">Descubre las acciones que estamos tomando para cambiar el mundo</p>
+        <h2 className="text-2xl md:text-4xl font-bold mb-4 text-cyan-700">Nuestras Iniciativas</h2>
+        <p className="text-base md:text-lg">Descubre las acciones que estamos tomando para cambiar el mundo</p>
       </div>
 
       <div className="relative flex flex-col lg:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8 items-center z-1">
         {cards.map((card, index) => (
           <div key={index} className="relative flex flex-col items-center">
-            <div className="relative w-80 h-80 md:w-72 md:h-72 shadow-xl rounded-full overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:-translate-y-2 my-4">
+            <div className="relative w-72 h-72 shadow-xl rounded-full overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:-translate-y-2 my-1 md:my-4">
               {/* BorderBeam positioned absolutely to be behind the Image with additional props */}
               <BorderBeam
                 className="absolute inset-0 w-full h-full z-10 rounded-full"
@@ -63,15 +63,15 @@ const FantasticPhotoCardsSection: React.FC = () => {
               </div>
             </div>
             <div className="text-center mt-2">
-              <h3 className="text-2xl font-bold text-cyan-700">{card.title}</h3>
-              <p className="text-lg">{card.description}</p>
+              <h3 className="text-xl md:text-2xl font-bold text-cyan-700">{card.title}</h3>
+              <p className="text-base md:text-lg">{card.description}</p>
             </div>
           </div>
         ))}
       </div>
 
       {/* Botón "Ver Más" */}
-      <div className="text-center mt-12 relative z-10">
+      <div className="text-center mt-6 md:mt-12 relative z-10">
         <Link href="/iniciativas"
           className="inline-block bg-lime-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out hover:bg-lime-600">
             Ver Más Iniciativas

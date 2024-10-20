@@ -81,7 +81,7 @@ const Contactanos: React.FC = () => {
   return (
     <section className="p-6 my-8 bg-stone-50 text-stone-700 rounded-lg mx-auto px-4">
       <div className="mx-auto px-2">
-        <h2 className="text-4xl font-bold text-cyan-700 text-center">Contáctanos</h2>
+        <h2 className="text-2xl md:text-4xl font-bold text-cyan-700 text-center">Contáctanos</h2>
         <p className="text-center my-4">Puedes tomar la información de contacto o dejarnos un mensaje y nosotros te responderemos lo más rápido posible</p>
 
         <div className="flex flex-col md:flex-row justify-between space-y-6 md:space-x-6 max-w-screen-lg mx-auto">
