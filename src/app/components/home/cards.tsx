@@ -31,8 +31,8 @@ const FantasticPhotoCardsSection: React.FC = () => {
         style={{ maskImage: 'radial-gradient(300px_circle_at_center, white, transparent)' }}
       />
       
-      <div className="text-center m-4 relative z-10">
-        <h2 className="text-2xl md:text-4xl font-bold mb-4 text-cyan-700">Nuestras Iniciativas</h2>
+      <div className="text-center m-3 relative z-10">
+        <h2 className="text-2xl md:text-4xl font-bold mb-3 text-cyan-700">Nuestras Iniciativas</h2>
         <p className="text-base md:text-lg">Descubre las acciones que estamos tomando para cambiar el mundo</p>
       </div>
 

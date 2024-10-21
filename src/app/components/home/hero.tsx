@@ -23,18 +23,18 @@ const HeroSection: React.FC = () => {
         sizes="100vw"
         priority
         decoding="async"
-        className="object-cover w-full h-full absolute top-0 left-0 z-0 brightness-75 rounded-lg"
+        className="object-cover w-full h-full absolute top-0 left-0 z-0 brightness-50 rounded-lg"
       />
 
       {/* Contenido del héroe */}
-      <div className="relative z-1 text-center m-8 my-10 md:my-14 py-10 shadow-xl md:shadow-2xl lg:px-32 rounded-xl backdrop-blur-3xl border boder-2 border-lime-700 p-2" data-aos="fade-up">
+      <div className="relative z-1 text-center m-8 my-12 py-12 md:py-10 shadow-xl md:shadow-2xl lg:px-32 rounded-xl backdrop-blur-3xl border boder-2 border-lime-700 p-2" data-aos="fade-up">
         <h1 className="text-3xl md:text-6xl font-extrabold text-white drop-shadow-lg">
-          Ama Ser el Cambio A.C.
+          Ama Ser el Cambio A. C.
         </h1>
-        <p className="text-xl md:text-3xl m-4 text-lime-200 drop-shadow-lg">
+        <p className="text-base md:text-3xl my-2 text-lime-200 drop-shadow-lg">
           {"Manos que Dan, Jamás Estarán Vacías."}
         </p>
-        <p className="text-xl mb-12 text-white drop-shadow-lg">
+        <p className="text-base mb-6 md:mb-12 text-white drop-shadow-lg">
           ¡Súmate a la Nueva Generación!
         </p>
         <Link href="/donar">
