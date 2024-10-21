@@ -2,7 +2,7 @@
 import { FaUniversity, FaKey, FaFileAlt } from 'react-icons/fa';
 
 const DonationDetails: React.FC = () => (
-  <section id="detalles" className="text-base md:text-lg leading-relaxed text-gray-700 my-16 text-center max-w-screen-xl mx-auto">
+  <section id="detalles" className="text-base md:text-lg leading-relaxed text-gray-700 my-8 text-center max-w-screen-xl mx-auto">
     <p className="mb-6 mx-6">
       Cada donación es una oportunidad para mejorar la vida de personas en situaciones vulnerables. Tu aporte nos permite continuar con nuestros proyectos de apoyo en diversos sectores. ¡Únete a nuestra misión!
     </p>
