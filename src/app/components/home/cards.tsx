@@ -39,7 +39,7 @@ const FantasticPhotoCardsSection: React.FC = () => {
       <div className="relative flex flex-col lg:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8 items-center z-1">
         {cards.map((card, index) => (
           <div key={index} className="relative flex flex-col items-center">
-            <div className="relative w-72 h-72 shadow-xl rounded-full overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:-translate-y-2 my-1 md:my-4">
+            <div className="relative w-80 h-80 shadow-xl rounded-full overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:-translate-y-2 my-1 md:my-4">
               {/* BorderBeam positioned absolutely to be behind the Image with additional props */}
               <BorderBeam
                 className="absolute inset-0 w-full h-full z-10 rounded-full"

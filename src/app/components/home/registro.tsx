@@ -34,7 +34,7 @@ const AfiliadoSection: React.FC = () => {
     <section className="py-6 md:py-12 px-4 md:px-10 bg-stone-50 rounded-xl shadow-lg mx-auto">
       <div className="flex flex-col lg:flex-row items-center justify-center lg:space-x-12 max-w-screen-lg mx-auto">
         <div className="text-center lg:text-left lg:w-3/5 mx-auto items-center justify-center">
-          <div className='flex flex-row lg:flex-row items-center mx-4 justify-around'>
+          <div className='flex flex-row lg:flex-row items-center mx-2 justify-around'>
             <p
                 className={`text-stone-600 font-bold text-3xl md:text-6xl underline ${
                   isAfiliado ? 'decoration-cyan-500' : 'decoration-pink-500'
