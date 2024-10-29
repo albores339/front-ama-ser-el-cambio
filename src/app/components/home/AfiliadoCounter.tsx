@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { UserGroupIcon, UserPlusIcon, CalendarIcon } from '@heroicons/react/24/solid';
-import AnimatedGradientText from '../animata/animated-gradient-text'; // Importa tu componente
 
 const AfiliadoCounter: React.FC = () => {
   const [counter, setCounter] = useState(0);
@@ -57,9 +56,9 @@ const AfiliadoCounter: React.FC = () => {
         <UserGroupIcon className='text-cyan-700 h-16 w-16 md:h-24 md:w-24 mx-2'/>
         <div className='flex flex-col text-center text-cyan-700'>
           {/* Usa AnimatedGradientText para el número que va creciendo */}
-          <AnimatedGradientText className='text-3xl md:text-6xl lg:text-7xl'>
+          <p className='text-3xl md:text-6xl lg:text-7xl'>
             {Math.floor(counter)}
-          </AnimatedGradientText>
+          </p>
           <p>Afiliados</p>
         </div>
       </div>

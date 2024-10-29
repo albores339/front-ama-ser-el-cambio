@@ -72,13 +72,13 @@ const AfiliadoSection: React.FC = () => {
         </div>
         <div className="mt-8 lg:mt-0 lg:w-2/5 flex justify-center transition-all duration-700">
           <Image
-            src={isAfiliado ? "/images/afiliado.jpeg" : "/images/donatario.jpeg"}
+            src={isAfiliado ? "https://res.cloudinary.com/dnytuotnv/image/upload/v1730179133/9_cmczvz.jpg" : "/images/donatario.jpeg"}
             alt={isAfiliado ? "Jaguar voluntario entregando comida" : "Donación en progreso"}
             width={400}
             height={400}
             priority
             sizes="(max-width: 400px) 100vw, 400px"
-            className={`rounded-lg shadow-xl border-2 ${
+            className={`rounded-lg shadow-xl border-2 object-cover h-[400px] ${
               isAfiliado ? 'border-cyan-500' : 'border-pink-500'
             } transition-transform duration-700 ${isAfiliado ? 'scale-100' : 'scale-105'}`}
           />
