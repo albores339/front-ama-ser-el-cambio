@@ -21,7 +21,7 @@ export default function GetStartedButton({
         >
           <span
             className={cn(
-              "text-lime-700 transition-colors duration-100 ease-in-out group-hover:text-white text-2xl md:text-4xl",
+              "text-lime-700 transition-colors duration-100 ease-in-out group-hover:text-white text-xl md:text-3xl",
             )}
           >
             {text}

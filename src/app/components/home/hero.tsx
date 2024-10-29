@@ -13,33 +13,70 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <header className="relative w-full h-full bg-gradient-to-b from-cyan-500 to-blue-800 text-white flex flex-col justify-center items-center rounded-lg">
-      {/* Imagen de fondo */}
-      <Image
-        src="/images/hero.webp"
-        alt="Hero image"
-        width={1280}
-        height={720}
-        sizes="100vw"
-        priority
-        decoding="async"
-        className="object-cover w-full h-full absolute top-0 left-0 z-0 brightness-50 rounded-lg"
-      />
-
+    <header className="w-full lg:max-h-[420px] my-5 flex flex-col lg:flex-row justify-center items-center rounded-lg p-4 max-w-screen-xl mx-auto overflow-hidden">
       {/* Contenido del héroe */}
-      <div className="relative z-1 text-center m-8 my-12 py-12 md:py-10 shadow-xl md:shadow-2xl lg:px-32 rounded-xl backdrop-blur-3xl border boder-2 border-lime-700 p-2" data-aos="fade-up">
-        <h1 className="text-3xl md:text-6xl font-extrabold text-white drop-shadow-lg">
-          Ama Ser el Cambio A. C.
-        </h1>
-        <p className="text-base md:text-3xl my-2 text-lime-200 drop-shadow-lg">
-          {"Manos que Dan, Jamás Estarán Vacías."}
-        </p>
-        <p className="text-base mb-6 md:mb-12 text-white drop-shadow-lg">
-          ¡Súmate a la Nueva Generación!
-        </p>
-        <Link href="/donar">
-          <GetStartedButton text='Donar'></GetStartedButton>
-        </Link>
+      <div className="relative w-full lg:w-1/2 flex flex-col" data-aos="fade-up">
+        <Image
+          src="https://res.cloudinary.com/dnytuotnv/image/upload/v1730180163/fondo_con_degradado_puro_color_cyan_crjwql.jpg"
+          alt="Fondo de degradado"
+          width={1000}
+          height={1000}
+          className="object-cover rounded-t-lg h-full" // Asegúrate de que ocupe toda la altura
+        />
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white p-2">
+          <h1 className="text-3xl md:text-4xl font-bold drop-shadow-lg">
+            Ama Ser el Cambio Asociación Civil.
+          </h1>
+          <p className="text-base md:text-lg my-2 drop-shadow-lg">
+            {"Manos que Dan, Jamás Estarán Vacías."}
+          </p>
+          <p className="text-base mb-6 drop-shadow-lg">
+            ¡Súmate a la Nueva Generación!
+          </p>
+          <Link href="/donar">
+            <GetStartedButton text='Donar' />
+          </Link>
+        </div>
+      </div>
+      <div className='w-full lg:w-1/2 flex flex-row p-2 gap-2 h-full items-center'>
+        <div className='relative w-1/2 flex flex-col h-full' data-aos="fade-up">
+          <Image
+            src="https://res.cloudinary.com/dnytuotnv/image/upload/v1730175657/10_iqtpgr.jpg"
+            alt="Haciendo comida para personas de la calle"
+            width={1920}
+            height={1280}
+            className='h-full object-cover shadow-lg' // Asegúrate de que ocupe la mitad de la altura
+          />
+          <div className='absolute bottom-0 left-0 right-0 font-bold text-white text-center p-2'>
+            COMIDA EN HOSPITALES
+          </div>
+        </div>
+        <div className='w-1/2 flex flex-col gap-2 h-full'>
+          <div className='relative flex-1' data-aos="fade-up">
+            <Image
+              src="https://res.cloudinary.com/dnytuotnv/image/upload/v1730171627/2_efjept.jpg"
+              alt="Haciendo comida para migrantes"
+              width={1920}
+              height={1280}
+              className='h-1/2 object-cover shadow-lg'
+            />
+            <div className='absolute bottom-0 left-0 right-0 font-bold text-white text-center p-2'>
+              COMIDA A MIGRANTES
+            </div>
+          </div>
+          <div className='relative flex-1' data-aos="fade-up">
+            <Image
+              src="https://res.cloudinary.com/dnytuotnv/image/upload/v1730171525/f27_vemqb5.jpg"
+              alt="Juguetes a niños sin recursos"
+              width={1920}
+              height={1280}
+              className='h-1/2 object-cover shadow-lg'
+            />
+            <div className='absolute bottom-0 left-0 right-0 font-bold text-white text-center p-2'>
+              JUGUETES A NIÑOS SIN RECURSOS
+            </div>
+          </div>
+        </div>
       </div>
     </header>
   );

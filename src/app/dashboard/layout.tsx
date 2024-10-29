@@ -4,7 +4,7 @@ import AdminAside from "../components/dashboard/AsideAdmin";
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen flex my-24 gap-4">
+    <div className="min-h-screen flex gap-4">
       {/* Sidebar / Aside */}
       <AdminAside />
 
